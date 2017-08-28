@@ -16,6 +16,17 @@ ActiveRecord::Schema.define(version: 20170828173614) do
   enable_extension "plpgsql"
 
   create_table "assessments", force: :cascade do |t|
+    t.integer "remoteOneValue"
+    t.integer "remoteTwoValue"
+    t.integer "remoteThreeValue"
+    t.integer "remoteFourValue"
+    t.integer "remoteFiveValue"
+    t.integer "strategyOneValue"
+    t.integer "strategyTwoValue"
+    t.integer "strategyThreeValue"
+    t.integer "strategyFourValue"
+    t.integer "strategyFiveValue"
+    t.integer "strategySixValue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,17 +1,69 @@
-<%= form_with(model: assessment, local: true) do |form| %>
-  <% if assessment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(assessment.errors.count, "error") %> prohibited this assessment from being saved:</h2>
+<%= form_for [@assessment], url: assessments_path, html: { multipart: true } do |f| %>
+<div class="container">
 
-      <ul>
-      <% assessment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <div class="form-group">
+    <%= f.label :name, 'When given the choice, I prefer to be given a task list to run with.', :class => "question" %>
+  </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    <div class="line"></div>
     </div>
-  <% end %>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <%= f.radio_button :remoteOneValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
+      <%= f.radio_button :remoteOneValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
+      <%= f.radio_button :remoteOneValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
+      <%= f.radio_button :remoteOneValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+    </div>
+  </div>
+
+<br>
+  <div class="form-group">
+  <%= f.label :name, 'I work best in a social environment.', :class => "question" %>
+  <%= f.radio_button :remoteTwoValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
+  <%= f.radio_button :remoteTwoValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
+  <%= f.radio_button :remoteTwoValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
+  <%= f.radio_button :remoteTwoValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  </div>
+  <br>
+  <div class="form-group">
+  <%= f.label :name, 'My friends would say I’m technologically savvy.', :class => "question" %>
+  <%= f.radio_button :remoteThreeValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
+  <%= f.radio_button :remoteThreeValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
+  <%= f.radio_button :remoteThreeValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
+  <%= f.radio_button :remoteThreeValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  </div>
+  <br>
+  <div class="form-group">
+  <%= f.label :name, 'When I start my day, I go straight to email and respond to as many as I can before working on anything else.', :class => "question" %>
+  <%= f.radio_button :remoteFourValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
+  <%= f.radio_button :remoteFourValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
+  <%= f.radio_button :remoteFourValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
+  <%= f.radio_button :remoteFourValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  </div>
+
+  <br>
+  <div class="form-group">
+  <%= f.label :name, 'I’m good at multitasking on conference calls.', :class => "question" %>
+  <%= f.radio_button :remoteFiveValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
+  <%= f.radio_button :remoteFiveValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
+  <%= f.radio_button :remoteFiveValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
+  <%= f.radio_button :remoteFiveValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  </div>
+
+  <br>
+  <div class="form-group">
+  <%= f.label :name, 'I’m good at multitasking on conference calls.', :class => "question" %>
+  <%= f.radio_button :remoteFiveValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
+  <%= f.radio_button :remoteFiveValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
+  <%= f.radio_button :remoteFiveValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
+  <%= f.radio_button :remoteFiveValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  </div>
+
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
-<% end %>
+</div>
+    <% end %>
