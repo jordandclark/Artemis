@@ -1,3 +1,35 @@
 // Place all the styles related to the assessments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.line{
+  height:150px;
+  width:1px;
+  background:#000;
+}
+
+@font-face {
+  font-family: 'proxima-bold';
+  src: url('proxima.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'proxima-thin';
+  src: url('proxima-thin.otf') format('truetype');
+}
+
+.text{
+  font-family: 'proxima-bold', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2162ba;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.radio{
+  margin-left: 30px;
+}

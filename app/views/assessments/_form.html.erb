@@ -1,69 +1,218 @@
-<%= form_for [@assessment], url: assessments_path, html: { multipart: true } do |f| %>
 <div class="container">
+<%= form_for [@assessment], url: assessments_path, html: { multipart: true } do |f| %>
 
-  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-    <div class="form-group">
-    <%= f.label :name, 'When given the choice, I prefer to be given a task list to run with.', :class => "question" %>
-  </div>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'When given the choice, I prefer to be given a task list to run with.', :class => "text" %>
+      </div>
+    </div>
 
     <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-    <div class="line"></div>
+      <div class="line"></div>
     </div>
 
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <%= f.radio_button :remoteOneValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
-      <%= f.radio_button :remoteOneValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
-      <%= f.radio_button :remoteOneValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
-      <%= f.radio_button :remoteOneValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :remoteOneValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :remoteOneValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :remoteOneValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :remoteOneValue, 0 %> Strongly Disagree<br>
+      </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'I work best in a social environment.', :class => "text" %>
+      </div>
     </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :remoteTwoValue, 0 %> Strongly Agree<br>
+        <%= f.radio_button :remoteTwoValue, 1 %> Moderately Agree<br>
+        <%= f.radio_button :remoteTwoValue, 2 %> Moderately Disagree<br>
+        <%= f.radio_button :remoteTwoValue, 4 %> Strongly Disagree<br>
+      </div>
   </div>
 
-<br>
-  <div class="form-group">
-  <%= f.label :name, 'I work best in a social environment.', :class => "question" %>
-  <%= f.radio_button :remoteTwoValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
-  <%= f.radio_button :remoteTwoValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
-  <%= f.radio_button :remoteTwoValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
-  <%= f.radio_button :remoteTwoValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
-  </div>
-  <br>
-  <div class="form-group">
-  <%= f.label :name, 'My friends would say I’m technologically savvy.', :class => "question" %>
-  <%= f.radio_button :remoteThreeValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
-  <%= f.radio_button :remoteThreeValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
-  <%= f.radio_button :remoteThreeValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
-  <%= f.radio_button :remoteThreeValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
-  </div>
-  <br>
-  <div class="form-group">
-  <%= f.label :name, 'When I start my day, I go straight to email and respond to as many as I can before working on anything else.', :class => "question" %>
-  <%= f.radio_button :remoteFourValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
-  <%= f.radio_button :remoteFourValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
-  <%= f.radio_button :remoteFourValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
-  <%= f.radio_button :remoteFourValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'My friends would say I’m technologically savvy.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :remoteThreeValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :remoteThreeValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :remoteThreeValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :remoteThreeValue, 0 %> Strongly Disagree<br>
+      </div>
   </div>
 
-  <br>
-  <div class="form-group">
-  <%= f.label :name, 'I’m good at multitasking on conference calls.', :class => "question" %>
-  <%= f.radio_button :remoteFiveValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
-  <%= f.radio_button :remoteFiveValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
-  <%= f.radio_button :remoteFiveValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
-  <%= f.radio_button :remoteFiveValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'When I start my day, I go straight to email and respond to as many as I can before working on anything else.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :remoteFourValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :remoteFourValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :remoteFourValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :remoteFourValue, 0 %> Strongly Disagree<br>
+      </div>
   </div>
 
-  <br>
-  <div class="form-group">
-  <%= f.label :name, 'I’m good at multitasking on conference calls.', :class => "question" %>
-  <%= f.radio_button :remoteFiveValue, :value => 4, :class => "form-control" %>Strongly Agree<br>
-  <%= f.radio_button :remoteFiveValue, :value => 2, :class => "form-control" %>Moderately Agree<br>
-  <%= f.radio_button :remoteFiveValue, :value => 1, :class => "form-control" %>Moderately Disagree<br>
-  <%= f.radio_button :remoteFiveValue, :value => 0, :class => "form-control" %>Strongly Disagree<br>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'I’m good at multitasking on conference calls.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :remoteFiveValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :remoteFiveValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :remoteFiveValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :remoteFiveValue, 0 %> Strongly Disagree<br>
+      </div>
   </div>
 
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'If the internet were to go down at work and I had an important assignment to finish, I’d stay on the phone with the internet provider as long as it took and let my boss know my work might be late.', :class => "text", :style => "font-size:12px;" %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :strategyOneValue, 0 %> Strongly Agree<br>
+        <%= f.radio_button :strategyOneValue, 1 %> Moderately Agree<br>
+        <%= f.radio_button :strategyOneValue, 2 %> Moderately Disagree<br>
+        <%= f.radio_button :strategyOneValue, 4 %> Strongly Disagree<br>
+      </div>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'I enjoy problem-solving.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :strategyTwoValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :strategyTwoValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :strategyTwoValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :strategyTwoValue, 0 %> Strongly Disagree<br>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Giving presentations isn’t my thing.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :strategyThreeValue, 0 %> Strongly Agree<br>
+        <%= f.radio_button :strategyThreeValue, 1 %> Moderately Agree<br>
+        <%= f.radio_button :strategyThreeValue, 2 %> Moderately Disagree<br>
+        <%= f.radio_button :strategyThreeValue, 4 %> Strongly Disagree<br>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'I like to be an expert in everything I do.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :strategyFourValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :strategyFourValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :strategyFourValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :strategyFourValue, 0 %> Strongly Disagree<br>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, "I'm willing to try a new approach or process even if it might not work.", :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :strategyFiveValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :strategyFiveValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :strategyFiveValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :strategyFiveValue, 0 %> Strongly Disagree<br>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, "I already or would like to provide ways to give back to my community.", :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <%= f.radio_button :strategySixValue, 4 %> Strongly Agree<br>
+        <%= f.radio_button :strategySixValue, 2 %> Moderately Agree<br>
+        <%= f.radio_button :strategySixValue, 1 %> Moderately Disagree<br>
+        <%= f.radio_button :strategySixValue, 0 %> Strongly Disagree<br>
+      </div>
+  </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+    </div>
     <% end %>
+</div>
