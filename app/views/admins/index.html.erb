@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+
+  <h4>Here are all the Project Hiring Quizes</h4>
+  <p></p>
+<div class="container">
+<% if is_admin? %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Question 3</th>
+      <th>Question 4</th>
+      <th>Question 5</th>
+      <th>Question 6</th>
+      <th>Question 7</th>
+      <th>Question 8</th>
+      <th>Question 9</th>
+      <th>Question 10</th>
+      <th>Question 11</th>
+      <th>Remote Total Score</th>
+      <th>Strategy Total Score</th>
+      <th>Quiz Total Score</th>
+    </tr>
+  </thead>
+  <% @assessments.each do |assessment| %>
+  <tbody>
+    <td><%= assessment.name %></td>
+    <td><%= assessment.email %></td>
+    <td><%= assessment.remoteOneValue %></td>
+    <td><%= assessment.remoteTwoValue %></td>
+    <td><%= assessment.remoteThreeValue %></td>
+    <td><%= assessment.remoteFourValue %></td>
+    <td><%= assessment.remoteFiveValue %></td>
+    <td><%= assessment.strategyOneValue %></td>
+    <td><%= assessment.strategyTwoValue %></td>
+    <td><%= assessment.strategyThreeValue %></td>
+    <td><%= assessment.strategyFourValue %></td>
+    <td><%= assessment.strategyFiveValue %></td>
+    <td><%= assessment.strategySixValue %></td>
+    <td><%= assessment.remoteOneValue + assessment.remoteTwoValue + assessment.remoteThreeValue + assessment.remoteFourValue + assessment.remoteFiveValue  %>/20</td>
+    <td><%= assessment.strategyOneValue + assessment.strategyTwoValue + assessment.strategyThreeValue + assessment.strategyFourValue + assessment.strategyFiveValue + assessment.strategySixValue %>/24</td>
+    <td><%= assessment.remoteOneValue + assessment.remoteTwoValue + assessment.remoteThreeValue + assessment.remoteFourValue + assessment.remoteFiveValue + assessment.strategyOneValue + assessment.strategyTwoValue + assessment.strategyThreeValue + assessment.strategyFourValue + assessment.strategyFiveValue + assessment.strategySixValue %>/44</td>
+  </tbody>
+  <% end %>
+</table>
+<%= will_paginate @assessments %>
+<% end %>
+
+</div>
