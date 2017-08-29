@@ -44,3 +44,28 @@ h1{
   letter-spacing: .63px;
   font-family: 'proxima-bold';
 }
+
+
+.image{
+ width: 100%;
+ height: 250px;
+ margin-top: -30px;
+ background-image: url("hands.jpg");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: 50% 50%;
+}
+
+#paragraph{
+  text-align: center;
+  font-size: 25px;
+  font-family: 'helvetica';
+}
+
+#heading{
+  text-align: center;
+  font-family: 'Proxima-bold';
+  color: #738FA4;
+  font-size: 40px;
+  padding-top: 10px;
+}

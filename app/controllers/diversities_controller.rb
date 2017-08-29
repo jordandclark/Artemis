@@ -69,6 +69,10 @@ class DiversitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def diversity_params
-      params.fetch(:diversity, {})
+      params.fetch(:assessment).permit(:diversityOneValue,:diversityTwoValue,:diversityThreeValue, :diversityFourValue, :diversityFiveValue,:diversitySixValue,:diversitySevenValue,:diversityEightValue, :diversityNineValue, :diversityTenValue,
+      :employmentOneValue, :employmentTwoValue, :employmentThreeValue, :employmentFourValue, :employmentFiveValue, :employmentSixValue,:employmentSevenValue, :employmentEightValue, :employmentNineValue, :employmentTenValue, :employmentElevenValue, :employmentTwelveValue, :employmentThirteenValue, :employmentFourteenValue,
+      :commOneValue, :commTwoValue, :commThreeValue, :commFourValue, :commFiveValue,
+      :cultureOneValue, :cultureTwoValue, :cultureThreeValue, :cultureFourValue, :cultureFiveValue, :cultureSixValue,:cultureSevenValue, :cultureEightValue, :cultureNineValue, :cultureTenValue, :cultureElevenValue, :cultureTwelveValue, :cultureThirteenValue, :cultureFourteenValue,:cultureFifteenValue,
+      :name, :email)
     end
 end
