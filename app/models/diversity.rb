@@ -1,0 +1,2 @@
+class Diversity < ApplicationRecord
+end

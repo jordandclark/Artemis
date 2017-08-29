@@ -76,6 +76,6 @@ class AssessmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assessment_params
-      params.fetch(:assessment).permit(:remoteOneValue,:remoteTwoValue,:remoteThreeValue, :remoteFourValue, :remoteFiveValue, :strategyOneValue, :strategyTwoValue, :strategyThreeValue, :strategyFourValue, :strategyFiveValue, :strategySixValue)
+      params.fetch(:assessment).permit(:remoteOneValue,:remoteTwoValue,:remoteThreeValue, :remoteFourValue, :remoteFiveValue, :strategyOneValue, :strategyTwoValue, :strategyThreeValue, :strategyFourValue, :strategyFiveValue, :strategySixValue, :name, :email)
     end
 end

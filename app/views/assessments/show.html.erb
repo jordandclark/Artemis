@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <% if @remoteScore >= 14 && @strategyScore >= 16 %>
   <div class="response-box1">
@@ -31,7 +30,7 @@
     </div>
   </div>
 
-<% elsif ((@remoteScore >= 10 && @remoteScore < 14) && (@strategyScore < 16 && @strategyScore >= 12)) %>
+<% elsif @remoteScore >= 10 && @remoteScore >= 14 %>
   <div class="container">
     <h2 class="well">Your Results</h2>
     <div class="container">
@@ -79,6 +78,8 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:20px;">
               While we love your desire and effort, we don't see this as quite the right fit at this time.
               <br>
+              <br>
+
             </div>
             <a href="http://www.artemisconnection.com/" class="btn btn-primary" style="margin-left:10px">Home</a>
           </div>
@@ -107,13 +108,3 @@
     </div>
   </div>
 <% end %>
-
-
-
-
-
-
-
-
-<%= link_to 'Edit', edit_assessment_path(@assessment) %> |
-<%= link_to 'Back', assessments_path %>

@@ -11,6 +11,8 @@ $(document).ready(function(){
   $("#question10").hide();
   $("#question11").hide();
   $("#button").hide();
+  $("#email").hide();
+
 
   $('.question1').click(function(){
     $('#question1').hide();
@@ -64,8 +66,9 @@ $(document).ready(function(){
 
   $('.question11').click(function(){
     $('#question11').hide();
-    $('.button').show();
+    $('#email').show();
   });
+
 
 
   $('.bquestion1').click(function(){
@@ -210,7 +213,6 @@ $(document).ready(function(){
         <a style="margin-top:20px;" class="btn btn-primary question3">Next</a>
         <div class="spacer" style="padding:10px;"></div>
         <a class="btn btn-primary bquestion2">Back</a>
-
       </div>
   </div>
 
@@ -236,7 +238,6 @@ $(document).ready(function(){
         <a style="margin-top:20px;" class="btn btn-primary question4">Next</a>
         <div class="spacer" style="padding:10px;"></div>
         <a class="btn btn-primary bquestion3">Back</a>
-
       </div>
   </div>
 
@@ -413,14 +414,36 @@ $(document).ready(function(){
         <%= f.radio_button :strategySixValue, 0 %> Strongly Disagree<br>
       </div>
       <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <%= f.submit 'Submit', :class => "btn btn-primary button", :style => "margin-top:20px;" %>
+        <a style="margin-top:20px;" class="btn btn-primary question11">Next</a>
         <div class="spacer" style="padding:10px;"></div>
         <a class="btn btn-primary bquestion10">Back</a>
       </div>
   </div>
 
-    <div id="button" class="actions submit">
-      <%= f.submit 'Submit' %>
+  <div id="email" class="row well">
+    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <div class="form-group">
+      <%= f.label :name, "Please fill out your name and email in order to see your results", :class => "text" %>
+
+      <%= f.label :name, "First and Last Name", :class => "smaller_text" %>
+      <br>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :email, "Email Address", :class => "smaller_text" %>
+      <br>
+      <%= f.text_field :email %>
+      <br>
+      <br>
+      <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+      </div>
+
     </div>
+
+
+    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+  </div>
+
     <% end %>
 </div>

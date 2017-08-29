@@ -14,6 +14,9 @@ class CreateAssessments < ActiveRecord::Migration[5.1]
       t.integer :strategyFiveValue
       t.integer :strategySixValue
 
+      t.string :name
+      t.string :email
+
       t.timestamps
     end
   end

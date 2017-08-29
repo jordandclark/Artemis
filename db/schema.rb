@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170828173614) do
     t.integer "strategyFourValue"
     t.integer "strategyFiveValue"
     t.integer "strategySixValue"
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
