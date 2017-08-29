@@ -11,6 +11,12 @@ class AssessmentsController < ApplicationController
   # GET /assessments/1.json
   def show
     @assessments = Assessment.find(params[:id])
+
+    @remoteScore = @assessments.remoteOneValue + @assessments.remoteTwoValue + @assessments.remoteThreeValue + @assessments.remoteFourValue + @assessments.remoteFiveValue;
+
+    @strategyScore = @assessments.strategyOneValue + @assessments.strategyTwoValue + @assessments.strategyThreeValue + @assessments.strategyFourValue + @assessments.strategyFiveValue + @assessments.strategySixValue;
+
+    @totalScore = @assessments.remoteOneValue + @assessments.remoteTwoValue + @assessments.remoteThreeValue + @assessments.remoteFourValue + @assessments.remoteFiveValue + @assessments.strategyOneValue + @assessments.strategyTwoValue + @assessments.strategyThreeValue + @assessments.strategyFourValue + @assessments.strategyFiveValue + @assessments.strategySixValue;
   end
 
   # GET /assessments/new

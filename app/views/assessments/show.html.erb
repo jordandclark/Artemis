@@ -1,4 +1,119 @@
 <p id="notice"><%= notice %></p>
 
+<% if @remoteScore >= 14 && @strategyScore >= 16 %>
+  <div class="response-box1">
+    <div class="container">
+      <h2 class="well">Your Results</h2>
+      <div class="container">
+        <h4>Thank you for taking our quiz. This is not only to give us a sense of who you are, but also allow you to get a sense if strategy consulting and working in a remote environment is right for you.</h4>
+        <br>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+          <h4 class="panel-title">Remote Environment Potential Fit</h4>
+          </div>
+
+          <div class="row panel-body" >
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:40px;">
+              <div class="w3-border">
+                <div class="w3-grey" style="height:24px; width:100%; text-align:center; background-color:#758DA2!important">100%</div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:20px;">
+              We think you're going to love working remotely! You seem to have all the right qualities it takes to be a successful remote worker as well as a collaborator with us.
+              <br>
+              <br>
+            </div>
+            <a href="http://www.artemisconnection.com/application" class="btn btn-primary" style="margin-left:10px">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% elsif ((@remoteScore >= 10 && @remoteScore < 14) && (@strategyScore < 16 && @strategyScore >= 12)) %>
+  <div class="container">
+    <h2 class="well">Your Results</h2>
+    <div class="container">
+      <h4>Thank you for taking our quiz. This is not only to give us a sense of who you are, but also allow you to get a sense if strategy consulting and working in a remote environment is right for you.</h4>
+      <br>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+        <h4 class="panel-title">Remote Environment Potential Fit</h4>
+        </div>
+
+        <div class="row panel-body">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:40px;">
+            <div class="w3-border">
+              <div class="w3-grey" style="height:24px; width:80%; text-align:center; background-color:#758DA2!important">80%</div>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:20px;">
+            We think you would be a strong remote worker but don't quite have the collaborator experience. Since you are so close to being a good fit, why not apply and we will see if we can work with you.
+            <br>
+          </div>
+          <a href="http://www.artemisconnection.com/application" class="btn btn-primary" style="margin-left:10px">Apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @remoteScore < 10 || @strategyScore < 12 %>
+    <div class="container">
+      <h2 class="well">Your Results</h2>
+      <div class="container">
+        <h4>Thank you for taking our quiz. This is not only to give us a sense of who you are, but also allow you to get a sense if strategy consulting and working in a remote environment is right for you.</h4>
+        <br>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+          <h4 class="panel-title">Remote Environment Potential Fit</h4>
+          </div>
+
+          <div class="row panel-body">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:40px;">
+              <div class="w3-border">
+                <div class="w3-grey" style="height:24px; width:50%; text-align:center; background-color:#758DA2!important">50%</div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:20px;">
+              While we love your desire and effort, we don't see this as quite the right fit at this time.
+              <br>
+            </div>
+            <a href="http://www.artemisconnection.com/" class="btn btn-primary" style="margin-left:10px">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<% else %>
+  <div class="container">
+    <h2 class="well">Your Results</h2>
+    <div class="container">
+      <h4>Thank you for taking our quiz. This is not only to give us a sense of who you are, but also allow you to get a sense if strategy consulting and working in a remote environment is right for you.</h4>
+      <br>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+        <h4 class="panel-title">Remote Environment Potential Fit</h4>
+        </div>
+
+        <div class="row panel-body">
+
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p style="text-align:center;">Thank you for considering us. At this time we will be persuing other candidates.</p>
+          </div>
+          <a href="http://www.artemisconnection.com/" class="btn btn-primary" style="margin-left:10px">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
 <%= link_to 'Edit', edit_assessment_path(@assessment) %> |
 <%= link_to 'Back', assessments_path %>
