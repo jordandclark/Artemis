@@ -12,13 +12,17 @@ class DiversitiesController < ApplicationController
   def show
     @dandi = Diversity.find(params[:id])
 
-    @diversityAvg = @dandi.diversityOneValue + @dandi.diversityTwoValue + @dandi.diversityThreeValue + @dandi.diversityFourValue + @dandi.diversityFiveValue + @dandi.diversitySixValue + @dandi.diversitySevenValue + @dandi.diversityEightValue +  @dandi.diversityNineValue + @dandi.diversityTenValue
+    diverse = @dandi.diversityOneValue + @dandi.diversityTwoValue + @dandi.diversityThreeValue + @dandi.diversityFourValue + @dandi.diversityFiveValue + @dandi.diversitySixValue + @dandi.diversitySevenValue + @dandi.diversityEightValue +  @dandi.diversityNineValue + @dandi.diversityTenValue
+    @diversityAvg = diverse/10
 
-    @employmentAvg = @dandi.employmentOneValue + @dandi.employmentTwoValue + @dandi.employmentThreeValue + @dandi.employmentFourValue + @dandi.employmentFiveValue + @dandi.employmentSixValue + @dandi.employmentSevenValue + @dandi.employmentEightValue + @dandi.employmentNineValue + @dandi.employmentTenValue + @dandi.employmentElevenValue + @dandi.employmentTwelveValue + @dandi.employmentThirteenValue + @dandi.employmentFourteenValue
+    employee = @dandi.employmentOneValue + @dandi.employmentTwoValue + @dandi.employmentThreeValue + @dandi.employmentFourValue + @dandi.employmentFiveValue + @dandi.employmentSixValue + @dandi.employmentSevenValue + @dandi.employmentEightValue + @dandi.employmentNineValue + @dandi.employmentTenValue + @dandi.employmentElevenValue + @dandi.employmentTwelveValue + @dandi.employmentThirteenValue + @dandi.employmentFourteenValue
+    @employmentAvg = employee/14
 
-    @commAvg = @dandi.commOneValue + @dandi.commTwoValue + @dandi.commThreeValue + @dandi.commFourValue + @dandi.commFiveValue
+    comm = @dandi.commOneValue + @dandi.commTwoValue + @dandi.commThreeValue + @dandi.commFourValue + @dandi.commFiveValue
+    @commAvg = comm/5
 
-    @cultureAvg = @dandi.cultureOneValue + @dandi.cultureTwoValue + @dandi.cultureThreeValue + @dandi.cultureFourValue + @dandi.cultureFiveValue + @dandi.cultureSixValue + @dandi.cultureSevenValue + @dandi.cultureEightValue + @dandi.cultureNineValue + @dandi.cultureTenValue + @dandi.cultureElevenValue + @dandi.cultureTwelveValue + @dandi.cultureThirteenValue + @dandi.cultureFourteenValue + @dandi.cultureFifteenValue
+    culture = @dandi.cultureOneValue + @dandi.cultureTwoValue + @dandi.cultureThreeValue + @dandi.cultureFourValue + @dandi.cultureFiveValue + @dandi.cultureSixValue + @dandi.cultureSevenValue + @dandi.cultureEightValue + @dandi.cultureNineValue + @dandi.cultureTenValue + @dandi.cultureElevenValue + @dandi.cultureTwelveValue + @dandi.cultureThirteenValue + @dandi.cultureFourteenValue + @dandi.cultureFifteenValue
+    @cultureAvg = culture/15
 
   end
 

@@ -4,16 +4,47 @@
       <h2 class="well">Your Results</h2>
       <div class="container">
         <h5>Commitment to Diversity Section:</h5>
-        <p> Average Score: <%= (@diversityAvg/10) %>/5</p>
+        <p> Average Score: <%= @diversityAvg %>/5</p>
+        <% if @diversityAvg >= 4 %>
+        <h4>Looks like you are doing great in this area!</h4>
+        <% elsif @diversityAvg == 3%>
+        <h4>There is some improving you can do in this area, the links below will help!</h4>
+        <% else @diversityAvg < 3%>
+        <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
+        <% end %>
+
         <br>
         <h5>Employment Practices Section:</h5>
-        <p> Average Score: <%= (@employmentAvg/14) %>/5</p>
+        <p> Average Score: <%= @employmentAvg %>/5</p>
+        <% if @employmentAvg >= 4 %>
+        <h4>Looks like you are doing great in this area!</h4>
+        <% elsif @employmentAvg == 3%>
+        <h4>There is some improving you can do in this area, the links below will help!</h4>
+        <% else @employmentAvg < 3%>
+        <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
+        <% end %>
+
         <br>
         <h5>Communication Section:</h5>
-        <p> Average Score: <%= (@commAvg/5) %>/5</p>
+        <p> Average Score: <%= @commAvg %>/5</p>
+        <% if @commAvg >= 4 %>
+        <h4>Looks like you are doing great in this area!</h4>
+        <% elsif @commAvg == 3%>
+        <h4>There is some improving you can do in this area, the links below will help!</h4>
+        <% else @commAvg < 3%>
+        <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
+        <% end %>
+
         <br>
         <h5>Culture Section:</h5>
-        <p> Average Score: <%= (@cultureAvg/15) %>/5</p>
+        <p> Average Score: <%= @cultureAvg %>/5</p>
+        <% if @cultureAvg >= 4 %>
+        <h4>Looks like you are doing great in this area!</h4>
+        <% elsif @cultureAvg == 3%>
+        <h4>There is some improving you can do in this area, the links below will help!</h4>
+        <% else @cultureAvg < 3%>
+        <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
+        <% end %>
         <br>
       </div>
     </div>

@@ -1,0 +1,2 @@
+module DiversityResultsHelper
+end
