@@ -5,9 +5,6 @@
     $('#quiz4').hide();
     $('#email').hide();
 
-
-
-
     $('.quiz1').click(function(){
       $('#quiz1').hide();
       $('#quiz2').show();
@@ -32,8 +29,12 @@
     $('.quiz4').click(function(){
       $('#quiz4').hide();
       $('#email').show();
+      $('#description').hide();
       $("html, body").animate({ scrollTop: 0 }, 600);
       return false;
+
+
+
     });
 
 
@@ -41,15 +42,19 @@
 });
 </script>
 
-
 <div class="image"></div>
+<div id="description">
+  <div class="container">
+    <p id="heading">Diversity &amp; Inclusion Assessment</p>
+    <p id="paragraph">
+      This tool is meant to enable organizations to benchmark their current diversity and inclusion activities and provide guidance in identifying areas to drive change. Companies that score high demonstrate they are performing at levels considered to be industry best practices while companies that score low demonstrate they have some work to do.
+    </p>
+  </div>
+</div>
+
+<div class="spacer" style="padding:10px;"></div>
+
 <div class="container">
-  <p id="heading">Diversity &amp; Inclusion Assessment</p>
-  <p id="paragraph">
-    This tool is meant to enable organizations to benchmark their current diversity and inclusion activities and provide guidance in identifying areas to drive change. Companies that score high demonstrate they are performing at levels considered to be industry best practices while companies that score low demonstrate they have some work to do.
-  </p>
-
-
 <%= form_for [@diversity], url: diversities_path, html: { multipart: true } do |f| %>
 
   <% if diversity.errors.any? %>
@@ -1032,11 +1037,12 @@
     </div>
   </div>
   <hr>
+  <a style="margin-top:20px;" class="btn btn-primary quiz4">Next</a>
+  <div class="spacer" style="padding:10px;"></div>
 </div>
 
 <div id="email" class="row well">
   <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-
   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
     <div class="form-group">
     <%= f.label :name, "Please fill out your name and email in order to see your results", :class => "text" %>
@@ -1053,9 +1059,8 @@
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
     </div>
   </div>
-
   <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-
+</div>
 </div>
 
 <% end %>
