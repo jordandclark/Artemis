@@ -140,40 +140,42 @@ $(document).ready(function(){
   </div>
 <% end %>
 
-  <div id="question1" class="well">
-    <h3 class="text">When given the choice, I prefer to be given a task list to run with</h3>
+  <div id="question1" class="well1">
+    <h3 class="text">When given the choice, I prefer to be given a task list to run with.</h3>
       <div class="row">
         <div class="col-md-6">
           <div class="radio">
             <label>
-              <%= f.radio_button :remoteOneValue, 4, checked: true %> Strongly Agree
+              <%= f.radio_button :remoteOneValue, 4, checked: true %> <span>Strongly Agree</span>
             </label>
           </div>
         </div>
         <div class="col-md-6">
           <div class="radio">
             <label>
-              <%= f.radio_button :remoteOneValue, 2 %> Moderately Agree
+              <%= f.radio_button :remoteOneValue, 2 %>
+              <span>Moderately Agree</span>
             </label>
           </div>
         </div>
         <div class="col-md-6">
           <div class="radio">
             <label>
-              <%= f.radio_button :remoteOneValue, 1 %> Moderately Disagree
+              <%= f.radio_button :remoteOneValue, 1 %>
+              <span>Moderately Disagree</span>
             </label>
           </div>
         </div>
         <div class="col-md-6">
           <div class="radio">
             <label>
-              <%= f.radio_button :remoteOneValue, 0 %> Strongly Disagree
+              <%= f.radio_button :remoteOneValue, 0 %>
+              <span>Strongly Disagree</span>
             </label>
           </div>
         </div>
       </div>
-        <a style="margin-top:20px;" class="btn btn-primary question1">Next</a>
-
+      <a class="btn btn-primary question1">Next</a>
   </div>
 
 
