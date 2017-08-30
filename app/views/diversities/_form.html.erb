@@ -3,6 +3,9 @@
     $('#quiz2').hide();
     $('#quiz3').hide();
     $('#quiz4').hide();
+    $('#email').hide();
+
+
 
 
     $('.quiz1').click(function(){
@@ -22,6 +25,13 @@
     $('.quiz3').click(function(){
       $('#quiz3').hide();
       $('#quiz4').show();
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+
+    $('.quiz4').click(function(){
+      $('#quiz4').hide();
+      $('#email').show();
       $("html, body").animate({ scrollTop: 0 }, 600);
       return false;
     });
@@ -729,10 +739,323 @@
   </div>
   <hr>
 
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees feel like their achievements have been fairly recognized and rewarded.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureTwoValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureTwoValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureTwoValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureTwoValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureTwoValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees are encouraged to be themselves.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureThreeValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureThreeValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureThreeValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureThreeValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureThreeValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees think outcomes, processes, and communications are fair and respectful.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureFourValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureFourValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureFourValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureFourValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureFourValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Leaders encourage honest feedback and constructive criticism.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureFiveValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureFiveValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureFiveValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureFiveValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureFiveValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees are encouraged to ask questions.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureSixValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureSixValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureSixValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureSixValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureSixValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Leaders are open to new ideas and innovative approaches.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureSevenValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureSevenValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureSevenValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureSevenValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureSevenValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees have influence over their job responsibilities.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureEightValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureEightValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureEightValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureEightValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureEightValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Our teams embrace change well.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureNineValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureNineValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureNineValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureNineValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureNineValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees are given stretch opportunities.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureTenValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureTenValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureTenValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureTenValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureTenValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'All employees are given clear guidance on career development opportunities and potential promotion pathways.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureElevenValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureElevenValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureElevenValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureElevenValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureElevenValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees who are willing to learn new knowledge or skills are valued.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureTwelveValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureTwelveValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureTwelveValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureTwelveValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureTwelveValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Work-life balance for employees is a priority for managers and leaders.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureThirteenValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureThirteenValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureThirteenValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureThirteenValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureThirteenValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Flexible working arrangements are available.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureFourteenValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureFourteenValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureFourteenValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureFourteenValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureFourteenValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Family-friendly policies are in place including extended parental leave and family emergency days.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureFifteenValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureFifteenValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureFifteenValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureFifteenValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureFifteenValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<div id="email" class="row well">
+  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <div class="form-group">
+    <%= f.label :name, "Please fill out your name and email in order to see your results", :class => "text" %>
+
+    <%= f.label :name, "First and Last Name", :class => "smaller_text" %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :email, "Email Address", :class => "smaller_text" %>
+    <br>
+    <%= f.text_field :email %>
+    <br>
+    <br>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 
 </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
