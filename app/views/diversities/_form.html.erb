@@ -1,3 +1,36 @@
+<script>
+  $(document).ready(function(){
+    $('#quiz2').hide();
+    $('#quiz3').hide();
+    $('#quiz4').hide();
+
+
+    $('.quiz1').click(function(){
+      $('#quiz1').hide();
+      $('#quiz2').show();
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+
+    $('.quiz2').click(function(){
+      $('#quiz2').hide();
+      $('#quiz3').show();
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+
+    $('.quiz3').click(function(){
+      $('#quiz3').hide();
+      $('#quiz4').show();
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+
+
+
+});
+</script>
+
 
 <div class="image"></div>
 <div class="container">
@@ -21,7 +54,10 @@
     </div>
   <% end %>
 
-  <div id="question1" class="row ">
+<div id="quiz1">
+  <h3 id="heading">Commitment (leadership, accountability and measurement)</h3>
+          <hr>
+  <div class="row">
     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
       <div class="form-group">
       <%= f.label :name, 'When given the choice, I prefer to be given a task list to run with.', :class => "text" %>
@@ -32,17 +68,669 @@
       <div class="line"></div>
     </div>
 
-      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
-        <%= f.radio_button :diversityOneValue, 1 %> We’ve taken no actions to address this.<br>
-        <%= f.radio_button :diversityOneValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
-        <%= f.radio_button :diversityOneValue, 3 %> We’ve defined verbal and written standards to support this.<br>
-        <%= f.radio_button :diversityOneValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
-        <%= f.radio_button :diversityOneValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
-      </div>
-
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityOneValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityOneValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityOneValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityOneValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityOneValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
   </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'We have a dedicated employee overseeing and managing the company’s diversity performance.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityTwoValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityTwoValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityTwoValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityTwoValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityTwoValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'We have a senior level official who oversees and directs diversity efforts.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityThreeValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityThreeValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityThreeValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityThreeValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityThreeValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'We have a diversity/inclusion committee that meets on a regular basis.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityFourValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityFourValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityFourValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityFourValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityFourValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Creating a diverse and inclusive workplace is a goal that has been integrated into the organization’s strategic plan.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityFiveValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityFiveValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityFiveValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityFiveValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityFiveValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'A pay equity analysis was conducted in the last year.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversitySixValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversitySixValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversitySixValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversitySixValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversitySixValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has developed and established metrics for measuring the diversity of our workforce.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversitySevenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversitySevenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversitySevenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversitySevenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversitySevenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has measured its gender breakdown by role, level, and department in the last year.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityEightValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityEightValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityEightValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityEightValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityEightValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Diversity metrics are reviewed on a regular basis to evaluate and assess the progress of diversity and inclusion efforts.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityNineValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityNineValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityNineValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityNineValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityNineValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, "Diversity and inclusion competence considerations are integrated into our organization's strategic plan (including recruiting, hiring, retention, and promotion).", :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityTenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityTenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityTenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityTenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityTenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, "Diversity and inclusion competence considerations are integrated into our organization's strategic plan (including recruiting, hiring, retention, and promotion).", :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :diversityTenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :diversityTenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :diversityTenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :diversityTenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :diversityTenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+  <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+  <div class="spacer" style="padding:10px;"></div>
+</div>
+
+<!--Quiz 2 Employment Section Starts  -->
+
+<div id="quiz2">
+  <h3 id="heading">Cultivation (recruiting, developing and retaining talent)</h3>
+    <hr>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization is successful in recruiting and retaining Board leaders, senior management, and other leadership positions from diverse backgrounds with the expertise and ability to execute our strategic plan.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentOneValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentOneValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentOneValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentOneValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentOneValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Job descriptions include diversity and inclusion statements.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentTwoValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentTwoValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentTwoValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentTwoValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentTwoValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has increased the percentage of diverse employee hires over the same period last year.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentThreeValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentThreeValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentThreeValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentThreeValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentThreeValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has documented processes that promotes a diverse pool of candidates in our hiring, recruiting, retention, and promotion.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentFourValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentFourValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentFourValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentFourValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentFourValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has tailored its diversity and inclusion interventions to individual sites and markets.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentFiveValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentFiveValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentFiveValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentFiveValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentFiveValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees have participated in at least one diversity and inclusion or cultural sensitivity training session in the past 12 months.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentSixValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentSixValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentSixValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentSixValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentSixValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Unconscious bias training has been completed by all managers and senior leaders in the organization.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentSevenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentSevenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentSevenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentSevenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentSevenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization conducts regular employee engagement surveys with feedback loops for action in place.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentEightValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentEightValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentEightValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentEightValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentEightValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Orientation for new employees addresses the organization’s diversity and inclusion beliefs and policies.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentNineValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentNineValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentNineValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentNineValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentNineValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Diversity and inclusion policies and beliefs have informed the organization’s learning and development strategy.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentTenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentTenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentTenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentTenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentTenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Promotion decisions are monitored to ensure that they are fair and that all employees are being given the opportunity to advance.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentElevenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentElevenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentElevenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentElevenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentElevenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization/work place is accessible to non-English speakers and individuals with disabilities.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentTwelveValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentTwelveValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentTwelveValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentTwelveValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentTwelveValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization supports and enables the formation of Employee Resource Groups and has feedback loops for action in place.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentThirteenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentThirteenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentThirteenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentThirteenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentThirteenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'We have developed a supplier diversity policy that provides equal opportunity for all suppliers, regardless of gender, race, age, education, disability, religion, sexual orientation, background, or family situation.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :employmentFourteenValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :employmentFourteenValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :employmentFourteenValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :employmentFourteenValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :employmentFourteenValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+  <a style="margin-top:20px;" class="btn btn-primary quiz2">Next</a>
+  <div class="spacer" style="padding:10px;"></div>
+</div>
+
+<div id="quiz3">
+  <h3 id="heading">Communication</h3>
+    <hr>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has an official definition and shared understanding of diversity and inclusion that is shared and understood by employees at all levels.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :commOneValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :commOneValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :commOneValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :commOneValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :commOneValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees at all levels can easily describe why diversity and inclusion are important for our organization.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :commTwoValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :commTwoValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :commTwoValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :commTwoValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :commTwoValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization is transparent about its diversity and inclusion activities and makes information available to its employees, suppliers, consumers, and the public on its website.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :commThreeValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :commThreeValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :commThreeValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :commThreeValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :commThreeValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization regularly communicates its diversity and inclusion metrics and progress.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :commFourValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :commFourValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :commFourValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :commFourValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :commFourValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'The organization has an open door policy when it comes to issues diversity and inclusion related issues or concerns.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :commFiveValue, 1 %> We’ve taken no actions to address this.<br>
+      <%= f.radio_button :commFiveValue, 2 %> We taken actions to address this, but have not initiated a discussion.<br>
+      <%= f.radio_button :commFiveValue, 3 %> We’ve defined verbal and written standards to support this.<br>
+      <%= f.radio_button :commFiveValue, 4 %> We’ve defined standards and have integrated it into our workplace norms.<br>
+      <%= f.radio_button :commFiveValue, 5 %> We have standards and policies set to support this effort that represent best practice.<br>
+    </div>
+  </div>
+  <hr>
+  <a style="margin-top:20px;" class="btn btn-primary quiz3">Next</a>
+  <div class="spacer" style="padding:10px;"></div>
+</div>
+
+<!-- Quiz 4 Culture Section Starts -->
+<div id="quiz4">
+  <h3 id="heading">Culture</h3>
+    <hr>
+  <div class="row">
+    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <div class="form-group">
+      <%= f.label :name, 'Employees feel valued.', :class => "text" %>
+      </div>
+    </div>
+
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <div class="line"></div>
+    </div>
+
+    <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      <%= f.radio_button :cultureOneValue, 5 %> Strongly Agree<br>
+      <%= f.radio_button :cultureOneValue, 4 %> Agree<br>
+      <%= f.radio_button :cultureOneValue, 3 %> Indifferent<br>
+      <%= f.radio_button :cultureOneValue, 2 %> Disagree<br>
+      <%= f.radio_button :cultureOneValue, 1 %> Strongly Disagree<br>
+    </div>
+  </div>
+  <hr>
 
 
+</div>
 
   <div class="actions">
     <%= f.submit %>
