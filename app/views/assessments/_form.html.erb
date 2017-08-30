@@ -140,28 +140,40 @@ $(document).ready(function(){
   </div>
 <% end %>
 
-  <div id="question1" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, 'When given the choice, I prefer to be given a task list to run with.', :class => "text" %>
+  <div id="question1" class="well">
+    <h3 class="text">When given the choice, I prefer to be given a task list to run with</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="radio">
+            <label>
+              <%= f.radio_button :remoteOneValue, 4, checked: true %> Strongly Agree
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="radio">
+            <label>
+              <%= f.radio_button :remoteOneValue, 2 %> Moderately Agree
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="radio">
+            <label>
+              <%= f.radio_button :remoteOneValue, 1 %> Moderately Disagree
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="radio">
+            <label>
+              <%= f.radio_button :remoteOneValue, 0 %> Strongly Disagree
+            </label>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :remoteOneValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :remoteOneValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :remoteOneValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :remoteOneValue, 0 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
         <a style="margin-top:20px;" class="btn btn-primary question1">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-      </div>
+
   </div>
 
 

@@ -4,13 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-.line{
-  height:150px;
-  width:1px;
-  background:#000;
-}
-
 @font-face {
   font-family: 'proxima-bold';
   src: url('proxima.otf') format('truetype');
@@ -21,20 +14,26 @@
   src: url('proxima-thin.otf') format('truetype');
 }
 
-.text{
+.text {
   font-family: 'proxima-bold', sans-serif;
   letter-spacing: 2px;
+  margin-bottom: 1em;
   text-transform: uppercase;
   color: #2162ba;
   font-size: 20px;
   font-weight: 700;
 }
 
-.radio{
-  margin-left: 30px;
-}
-
 .smaller_text{
   font-family: 'proxima-thin';
   font-weight:lighter;
+}
+
+.radio label {
+  font-size: 1.2em;
+}
+
+.well {
+  padding: 0 2em;
+  margin-top: 2em;
 }
