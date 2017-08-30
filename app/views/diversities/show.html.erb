@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_diversity_path(@diversity) %> |
-<%= link_to 'Back', diversities_path %>
+<div class="container">
+  <div class="response-box1">
+    <div class="container">
+      <h2 class="well">Your Results</h2>
+      <div class="container">
+        <h5>Commitment to Diversity Section:</h5>
+        <p> Average Score: <%= (@diversityAvg/10) %>/5</p>
+        <br>
+        <h5>Employment Practices Section:</h5>
+        <p> Average Score: <%= (@employmentAvg/14) %>/5</p>
+        <br>
+        <h5>Communication Section:</h5>
+        <p> Average Score: <%= (@commAvg/5) %>/5</p>
+        <br>
+        <h5>Culture Section:</h5>
+        <p> Average Score: <%= (@cultureAvg/15) %>/5</p>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

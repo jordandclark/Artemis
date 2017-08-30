@@ -10,6 +10,16 @@ class DiversitiesController < ApplicationController
   # GET /diversities/1
   # GET /diversities/1.json
   def show
+    @dandi = Diversity.find(params[:id])
+
+    @diversityAvg = @dandi.diversityOneValue + @dandi.diversityTwoValue + @dandi.diversityThreeValue + @dandi.diversityFourValue + @dandi.diversityFiveValue + @dandi.diversitySixValue + @dandi.diversitySevenValue + @dandi.diversityEightValue +  @dandi.diversityNineValue + @dandi.diversityTenValue
+
+    @employmentAvg = @dandi.employmentOneValue + @dandi.employmentTwoValue + @dandi.employmentThreeValue + @dandi.employmentFourValue + @dandi.employmentFiveValue + @dandi.employmentSixValue + @dandi.employmentSevenValue + @dandi.employmentEightValue + @dandi.employmentNineValue + @dandi.employmentTenValue + @dandi.employmentElevenValue + @dandi.employmentTwelveValue + @dandi.employmentThirteenValue + @dandi.employmentFourteenValue
+
+    @commAvg = @dandi.commOneValue + @dandi.commTwoValue + @dandi.commThreeValue + @dandi.commFourValue + @dandi.commFiveValue
+
+    @cultureAvg = @dandi.cultureOneValue + @dandi.cultureTwoValue + @dandi.cultureThreeValue + @dandi.cultureFourValue + @dandi.cultureFiveValue + @dandi.cultureSixValue + @dandi.cultureSevenValue + @dandi.cultureEightValue + @dandi.cultureNineValue + @dandi.cultureTenValue + @dandi.cultureElevenValue + @dandi.cultureTwelveValue + @dandi.cultureThirteenValue + @dandi.cultureFourteenValue + @dandi.cultureFifteenValue
+
   end
 
   # GET /diversities/new
@@ -70,6 +80,7 @@ class DiversitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def diversity_params
       params.fetch(:diversity).permit(:diversityOneValue,:diversityTwoValue,:diversityThreeValue, :diversityFourValue, :diversityFiveValue,:diversitySixValue,:diversitySevenValue,:diversityEightValue, :diversityNineValue, :diversityTenValue,
+
       :employmentOneValue, :employmentTwoValue, :employmentThreeValue, :employmentFourValue, :employmentFiveValue, :employmentSixValue,:employmentSevenValue, :employmentEightValue, :employmentNineValue, :employmentTenValue, :employmentElevenValue, :employmentTwelveValue, :employmentThirteenValue, :employmentFourteenValue,
       :commOneValue, :commTwoValue, :commThreeValue, :commFourValue, :commFiveValue,
       :cultureOneValue, :cultureTwoValue, :cultureThreeValue, :cultureFourValue, :cultureFiveValue, :cultureSixValue,:cultureSevenValue, :cultureEightValue, :cultureNineValue, :cultureTenValue, :cultureElevenValue, :cultureTwelveValue, :cultureThirteenValue, :cultureFourteenValue,:cultureFifteenValue,
