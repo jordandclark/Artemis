@@ -1,0 +1,2 @@
+module HiringResultsHelper
+end

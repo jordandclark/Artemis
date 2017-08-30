@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   resources :welcomes, only: [:index]
-  resources :admins, only: [:index]
+  resources :hiring_results, only: [:index]
   devise_for :users
   resources :diversities
   resources :assessments
