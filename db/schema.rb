@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829194256) do
+ActiveRecord::Schema.define(version: 20170901001740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer_text"
+    t.integer "answer_weight"
+  end
+
+  create_table "answers_questions", id: false, force: :cascade do |t|
+    t.bigint "answer_id", null: false
+    t.bigint "question_id", null: false
+    t.index ["answer_id", "question_id"], name: "index_answers_questions_on_answer_id_and_question_id"
+    t.index ["question_id", "answer_id"], name: "index_answers_questions_on_question_id_and_answer_id"
+  end
 
   create_table "assessments", force: :cascade do |t|
     t.integer "remoteOneValue"
@@ -84,6 +96,21 @@ ActiveRecord::Schema.define(version: 20170829194256) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.integer "section_number"
+    t.string "question_text"
+  end
+
+  create_table "questions_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
+    t.string "user_selection"
+    t.integer "user_score"
+    t.integer "section_number"
+    t.index ["question_id", "user_id"], name: "index_questions_users_on_question_id_and_user_id"
+    t.index ["user_id", "question_id"], name: "index_questions_users_on_user_id_and_question_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -98,6 +125,8 @@ ActiveRecord::Schema.define(version: 20170829194256) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
+    t.integer "section_score"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
