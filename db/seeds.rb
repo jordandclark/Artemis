@@ -8,6 +8,12 @@
 Question.destroy_all
 Answer.destroy_all
 
+question_list = [
+  ['Our CEO or another Senior Executive is a sponsor of diversity and inclusion.', 1 ],
+  ['We have a dedicated senior level employee overseeing and managing the company’s diversity performance.', 1 ],
+  ['We have a diversity/inclusion committee that meets on a regular basis.', 1 ],
+  ['Creating a diverse and inclusive workplace is a goal that has been integrated into the organizations strategic plan.', 1 ]
+]
 class Seed
 
   def self.begin
@@ -16,35 +22,59 @@ class Seed
   end
 
   def make_questions
+    question_list.each do | section_number, question_text|
+      puts section_number
+      puts question_text
+
+    end
     Question.create!(
       section_number: 1,
       question_text: 'Our CEO or another Senior Executive is a sponsor of diversity and inclusion.',
       :answers_attributes => [
-
-      ]
-      )
-        Answer.create!(
+        {
         answer_text: 'We’ve taken no actions to address this.',
         answer_weight: 1
-        )
-        Answer.create!(
+      },
+      {
         answer_text: 'We taken actions to address this, but have not initiated a discussion.',
         answer_weight: 2
-        )
-        Answer.create!(
+      },
+      {
         answer_text: 'We’ve defined verbal and written standards to support this.',
         answer_weight: 3
-        )
-        Answer.create!(
+      },
+      {
         answer_text: 'We’ve defined standards and have integrated it into our workplace norms.',
         answer_weight: 4
-        )
-        Answer.create!(
+      },
+      {
         answer_text: 'We have standards and policies set to support this effort that represent best practice.',
         answer_weight: 5
-        )
+      }]
+    )
+      #   Answer.create!(
+      #   answer_text: 'We’ve taken no actions to address this.',
+      #   answer_weight: 1
+      #   )
+      #   Answer.create!(
+      #   answer_text: 'We taken actions to address this, but have not initiated a discussion.',
+      #   answer_weight: 2
+      #   )
+      #   Answer.create!(
+      #   answer_text: 'We’ve defined verbal and written standards to support this.',
+      #   answer_weight: 3
+      #   )
+      #   Answer.create!(
+      #   answer_text: 'We’ve defined standards and have integrated it into our workplace norms.',
+      #   answer_weight: 4
+      #   )
+      #   Answer.create!(
+      #   answer_text: 'We have standards and policies set to support this effort that represent best practice.',
+      #   answer_weight: 5
+      #   )
   end
-
+end
+Seed.begin
 # question_list = [
 #   ['Our CEO or another Senior Executive is a sponsor of diversity and inclusion.', 1 ],
 #   ['We have a dedicated senior level employee overseeing and managing the company’s diversity performance.', 1 ],
@@ -57,26 +87,26 @@ class Seed
 #     section_number: question_section_number,
 #     question_text: question_text,
 #     :answers_attributes => [
-#       {
-#         answer_text: 'We’ve taken no actions to address this.',
-#         answer_weight: 1
-#       },
-#       {
-#         answer_text: 'We taken actions to address this, but have not initiated a discussion.',
-#         answer_weight: 2
-#       },
-#       {
-#         answer_text: 'We’ve defined verbal and written standards to support this.',
-#         answer_weight: 3
-#       },
-#       {
-#         answer_text: 'We’ve defined standards and have integrated it into our workplace norms.',
-#         answer_weight: 4
-#       },
-#       {
-#         answer_text: 'We have standards and policies set to support this effort that represent best practice.',
-#         answer_weight: 5
-#       }
+      # {
+      #   answer_text: 'We’ve taken no actions to address this.',
+      #   answer_weight: 1
+      # },
+      # {
+      #   answer_text: 'We taken actions to address this, but have not initiated a discussion.',
+      #   answer_weight: 2
+      # },
+      # {
+      #   answer_text: 'We’ve defined verbal and written standards to support this.',
+      #   answer_weight: 3
+      # },
+      # {
+      #   answer_text: 'We’ve defined standards and have integrated it into our workplace norms.',
+      #   answer_weight: 4
+      # },
+      # {
+      #   answer_text: 'We have standards and policies set to support this effort that represent best practice.',
+      #   answer_weight: 5
+      # }
 #     ]
 #   )
 # end
@@ -195,4 +225,3 @@ class Seed
 #
 # end
 #
-# Seed.begin
