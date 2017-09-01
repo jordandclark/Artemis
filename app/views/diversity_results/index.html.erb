@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Diversity Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diversity_results.each do |diversity_result| %>
+      <tr>
+        <td><%= link_to 'Show', diversity_result %></td>
+        <td><%= link_to 'Edit', edit_diversity_result_path(diversity_result) %></td>
+        <td><%= link_to 'Destroy', diversity_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diversity Result', new_diversity_result_path %>
