@@ -50,8 +50,6 @@ class Seed
       {
         answer_text: 'We have standards and policies set to support this effort that represent best practice.',
         answer_weight: 5
-<<<<<<< HEAD
-        )
 
 
 
@@ -107,7 +105,6 @@ class Seed
     # #   section_number: 2,
     # #   question_text: 'All job descriptions include diversity and inclusion statements.')
 
-=======
       }]
     )
     Question.create!(
@@ -156,7 +153,6 @@ class Seed
       #   answer_weight: 5
       #   )
   end
->>>>>>> 2bb555e44457827f9775a82457f1a8d0f793cda0
 end
 Seed.begin
 # question_list = [
