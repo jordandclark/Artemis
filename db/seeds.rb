@@ -22,14 +22,39 @@ class Seed
   end
 
   def make_questions
-    question_list.each do | section_number, question_text|
-      puts section_number
-      puts question_text
-
-    end
+    # question_list.each do | section_number, question_text|
+    #   puts section_number
+    #   puts question_text
+    #
+    # end
     Question.create!(
       section_number: 1,
       question_text: 'Our CEO or another Senior Executive is a sponsor of diversity and inclusion.',
+      :answers_attributes => [
+        {
+        answer_text: 'We’ve taken no actions to address this.',
+        answer_weight: 1
+      },
+      {
+        answer_text: 'We taken actions to address this, but have not initiated a discussion.',
+        answer_weight: 2
+      },
+      {
+        answer_text: 'We’ve defined verbal and written standards to support this.',
+        answer_weight: 3
+      },
+      {
+        answer_text: 'We’ve defined standards and have integrated it into our workplace norms.',
+        answer_weight: 4
+      },
+      {
+        answer_text: 'We have standards and policies set to support this effort that represent best practice.',
+        answer_weight: 5
+      }]
+    )
+    Question.create!(
+      section_number: 1,
+      question_text: 'We have a dedicated senior level employee overseeing and managing the company’s diversity performance.',
       :answers_attributes => [
         {
         answer_text: 'We’ve taken no actions to address this.',
