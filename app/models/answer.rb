@@ -1,4 +1,4 @@
 class Answer < ApplicationRecord
-  has_many :answers_questions
-  has_many :questions, through: :answers_questions
+  has_many :answer_questions
+  has_many :questions, through: :answer_questions
 end
