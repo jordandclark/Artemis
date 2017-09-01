@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901001740) do
+ActiveRecord::Schema.define(version: 20170901165502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,13 +18,6 @@ ActiveRecord::Schema.define(version: 20170901001740) do
   create_table "answers", force: :cascade do |t|
     t.string "answer_text"
     t.integer "answer_weight"
-  end
-
-  create_table "answers_questions", id: false, force: :cascade do |t|
-    t.bigint "answer_id", null: false
-    t.bigint "question_id", null: false
-    t.index ["answer_id", "question_id"], name: "index_answers_questions_on_answer_id_and_question_id"
-    t.index ["question_id", "answer_id"], name: "index_answers_questions_on_question_id_and_answer_id"
   end
 
   create_table "assessments", force: :cascade do |t|
@@ -101,14 +94,19 @@ ActiveRecord::Schema.define(version: 20170901001740) do
     t.string "question_text"
   end
 
-  create_table "questions_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "question_id", null: false
-    t.string "user_selection"
-    t.integer "user_score"
-    t.integer "section_number"
-    t.index ["question_id", "user_id"], name: "index_questions_users_on_question_id_and_user_id"
-    t.index ["user_id", "question_id"], name: "index_questions_users_on_user_id_and_question_id"
+  create_table "respondents", force: :cascade do |t|
+    t.string "user_email"
+    t.string "user_name"
+    t.string "organization"
+    t.integer "section_one_score"
+    t.integer "section_two_score"
+    t.integer "section_three_score"
+    t.integer "section_four_score"
+    t.integer "section_five_score"
+    t.integer "section_six_score"
+    t.integer "section_seven_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

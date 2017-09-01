@@ -1,0 +1,3 @@
+class Respondent < ApplicationRecord
+  
+end
