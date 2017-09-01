@@ -40,6 +40,7 @@ class Seed
         answer_weight: 5
         )
   end
+end
 
 # question_list = [
 #   ['Our CEO or another Senior Executive is a sponsor of diversity and inclusion.', 1 ],
