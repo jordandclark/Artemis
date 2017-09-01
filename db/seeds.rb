@@ -99,11 +99,7 @@ class Seed
       #   )
   end
 end
-<<<<<<< HEAD
-
-=======
 Seed.begin
->>>>>>> 2bb555e44457827f9775a82457f1a8d0f793cda0
 # question_list = [
 #   ['Our CEO or another Senior Executive is a sponsor of diversity and inclusion.', 1 ],
 #   ['We have a dedicated senior level employee overseeing and managing the company’s diversity performance.', 1 ],
