@@ -10,23 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901174321) do
+ActiveRecord::Schema.define(version: 20170901222242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answer_questions", force: :cascade do |t|
-    t.bigint "question_id"
-    t.bigint "answer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_answer_questions_on_answer_id"
-    t.index ["question_id"], name: "index_answer_questions_on_question_id"
-  end
-
   create_table "answers", force: :cascade do |t|
     t.string "answer_text"
     t.integer "answer_weight"
+  end
+
+  create_table "answers_questions", force: :cascade do |t|
+    t.integer "answer_id"
+    t.integer "question_id"
   end
 
   create_table "assessments", force: :cascade do |t|
@@ -150,8 +146,6 @@ ActiveRecord::Schema.define(version: 20170901174321) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answer_questions", "answers"
-  add_foreign_key "answer_questions", "questions"
   add_foreign_key "responses", "questions"
   add_foreign_key "responses", "respondents"
 end
