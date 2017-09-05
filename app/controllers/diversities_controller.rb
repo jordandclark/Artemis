@@ -28,6 +28,8 @@ class DiversitiesController < ApplicationController
 
   # GET /diversities/new
   def new
+    @questions = Question.all
+    @answers = Answer.all
     @diversity = Diversity.new
   end
 
