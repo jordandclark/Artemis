@@ -22,7 +22,7 @@ class Seed
   end
 
   def make_questions
-    # question_list.each do | section_number, question_text|
+    # question_list.each do | question |
     #   puts section_number
     #   puts question_text
     #
