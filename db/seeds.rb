@@ -30,7 +30,7 @@ class Seed
     Question.create!(
       section_number: 1,
       question_text: 'Our CEO or another Senior Executive is a sponsor of diversity and inclusion.',
-      :answers_attributes => [6
+      :answers_attributes => [
         {
         answer_text: 'We’ve taken no actions to address this.',
         answer_weight: 1
