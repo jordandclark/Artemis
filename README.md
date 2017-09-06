@@ -65,7 +65,7 @@ On Windows, the easiest way to install Ruby is with the RailsInstaller, which in
 
 ![Picture](https://puu.sh/xt9V4/340431493d.png)
 
-![Picture](https://puu.sh/xta1J/042108de8b.png)
+![Picture](https://puu.sh/xtdvD/f0b593a7fb.png)
 
 Don't forget to change access rights to folder `PostgreSQL\9.0` and remove any default readonly rights on the folder or content. (You may also need to restart your computer for these to take effect)
 
