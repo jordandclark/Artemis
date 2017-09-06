@@ -13,17 +13,25 @@
 
           * [Accessing the Terminal](#d)
 
-        * [OSX Installation Instructions](#e)
+        * [Installing Ruby on Rails](#e)
 
-2. [Viewing this Application](#o)
+2. [Viewing this Application](#f)
 
-    1. [Clone down this application locally](#p)
+    1. [Clone down this application locally](#g)
 
-    2. [Install the required dependencies](#q)
+    3. [Take the application live](#h)
 
-    3. [Take the application live](#r)
+3. [Editing this Application](#i)
 
-3. [Editing this Application](#s)
+## Prerequisites
+* Rails
+* PostgreSQL
+
+## Technologies Used
+* HTML/CSS
+* Ruby
+* Rails
+* PostgreSQL
 
 # <a name="a"></a>Getting Started
 
@@ -38,10 +46,6 @@ Atom was designed with the developer in mind by adding features and customizatio
 ## <a name="c"></a> Windows / Linux Installation Instructions
 
 * <a name="d"></a> Accessing the Terminal
-
-### Mac Setup
-
-On a Mac, the Terminal application is located in the Utilities folder, which is located inside the Applications folder. You may also locate the Terminal by clicking the magnifying glass icon at the upper right corner of the screen and typing "Terminal".
 
 ### Windows Setup
 
@@ -101,7 +105,7 @@ Right-click on Login Roles and select 'New Login Role...' in Role name, put in y
 
 6. You should now be able to create a new database without being signed in as the postgres user. Try typing:
 
-`created database mydb_as_user`
+`created database mydb_as_user;`
 
 ![Picture](https://puu.sh/xtdkE/24d65c6a4d.png)
 
@@ -109,11 +113,28 @@ Right-click on Login Roles and select 'New Login Role...' in Role name, put in y
 
 # <a name="o"></a> Viewing the application
 
-## <a name="p"></a> Cloning the application locally
+## Setup Requirements
+
+1. Clone the directory to your local machine.
+
+![Picture](https://puu.sh/xtene/a7a7a43b05.png)
+
+![Picture](https://puu.sh/xteyT/b631463235.png)
+
+2. Navigate to project root directory.
+
+>> cd Artemis
+
+![Picture](https://puu.sh/xteJ2/9d461363f3.png)
+
+3. Run $ bundle to install necessary gems.
+4. Run $ rails db:create and $ rails db:migrate to initialize the database. Run $ rails db:migrate RAILS_ENV=test to enable rspec tests.
+5. Run $ rails db:seed to populate the database with data.
+6. Run $ rails server to start the app. Navigate to 'localhost:3000' in your browser.
 
 - - - -
 
-# <a name="s"></a> Editing the Application
+# <a name="i"></a> Editing the Application
 
 * Make sure you're in the project folder in your terminal
 
@@ -122,3 +143,19 @@ Right-click on Login Roles and select 'New Login Role...' in Role name, put in y
 > $ atom .
 
 >> Note that there is a period following the atom command. This is telling the terminal to open all of the files in your current directory under atom.
+
+* Navigate to the `db` folder in the project directory, then select the file `seeds.rb`
+
+![Picture](https://puu.sh/xteTS/89be496905.png)
+
+* You'll see a method called `make_questions`
+
+![Picture](https://puu.sh/xtfqT/43a3faeb04.png)
+
+* This contains the questions and their related section number
+
+* Further down you'll see the text for quiz answers and their value
+
+![Picture](https://puu.sh/xtfE9/cacbb89e79.png)
+
+* Make the necessary changes, <kbd>CTRL</kbd>+<kbd>S</kbd> to save and `rails s` in your terminal. To see the changes locally on your browser at 'localhost:3000'
