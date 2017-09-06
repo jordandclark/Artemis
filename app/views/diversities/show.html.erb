@@ -3,46 +3,87 @@
     <div class="container">
       <h2 class="well">Your Results</h2>
       <div class="container">
-        <h5>Commitment to Diversity Section:</h5>
-        <p> Average Score: <%= @diversityAvg %>/5</p>
-        <% if @diversityAvg >= 4 %>
+        <h4>Commitment to Diversity Section:</h4>
+
+        <!-- Score and progress bar -->
+        <div class="row">
+          <div class="col-md-6">
+            <p>Score</p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @diversityScore %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@diversityScore * 100, precision: 0) %>;">
+                <%= number_to_percentage(@diversityScore * 100, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @diversityScore >= 4 %>
         <h4>Looks like you are doing great in this area!</h4>
-        <% elsif @diversityAvg == 3%>
+        <% elsif @diversityScore == 3%>
         <h4>There is some improving you can do in this area, the links below will help!</h4>
-        <% else @diversityAvg < 3%>
+        <% else @diversityScore < 3%>
         <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
         <% end %>
 
         <br>
-        <h5>Employment Practices Section:</h5>
-        <p> Average Score: <%= @employmentAvg %>/5</p>
-        <% if @employmentAvg >= 4 %>
+        <h4>Employment Practices Section:</h4>
+        <!-- Score and progress bar -->
+        <div class="row">
+          <div class="col-md-6">
+            <p>Score</p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @employmentScore %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@employmentScore * 100, precision: 0) %>;">
+                <%= number_to_percentage(@employmentScore * 100, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @employmentScore >= 4 %>
         <h4>Looks like you are doing great in this area!</h4>
-        <% elsif @employmentAvg == 3%>
+        <% elsif @employmentScore == 3%>
         <h4>There is some improving you can do in this area, the links below will help!</h4>
-        <% else @employmentAvg < 3%>
+        <% else @employmentScore < 3%>
         <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
         <% end %>
 
         <br>
-        <h5>Communication Section:</h5>
-        <p> Average Score: <%= @commAvg %>/5</p>
-        <% if @commAvg >= 4 %>
+        <h4>Communication Section:</h4>
+        <!-- Score and progress bar -->
+        <div class="row">
+          <div class="col-md-6">
+            <p>Score</p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @commScore %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@commScore * 100, precision: 0) %>;">
+                <%= number_to_percentage(@commScore * 100, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @commScore >= 4 %>
         <h4>Looks like you are doing great in this area!</h4>
-        <% elsif @commAvg == 3%>
+        <% elsif @commScore == 3%>
         <h4>There is some improving you can do in this area, the links below will help!</h4>
-        <% else @commAvg < 3%>
+        <% else @commScore < 3%>
         <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
         <% end %>
 
         <br>
         <h5>Culture Section:</h5>
-        <p> Average Score: <%= @cultureAvg %>/5</p>
-        <% if @cultureAvg >= 4 %>
+        <!-- Score and progress bar -->
+        <div class="row">
+          <div class="col-md-6">
+            <p>Score</p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @cultureScore %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@cultureScore * 100, precision: 0) %>;">
+                <%= number_to_percentage(@cultureScore * 100, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @cultureScore >= 4 %>
         <h4>Looks like you are doing great in this area!</h4>
-        <% elsif @cultureAvg == 3%>
+        <% elsif @cultureScore == 3%>
         <h4>There is some improving you can do in this area, the links below will help!</h4>
-        <% else @cultureAvg < 3%>
+        <% else @cultureScore < 3%>
         <h4>This is definitely an area you should work on, we would love to work with you on this area</h4>
         <% end %>
         <br>
