@@ -37,7 +37,28 @@ class Seed
       ['Diversity and inclusion policies and beliefs have informed our learning and development strategy.', 2],
       ['Performance appraisals and promotion decisions are monitored to ensure that they are fair and that all employees are being given the opportunity to advance.', 2],
       ['Our work place is accessible to non-English speakers and individuals with disabilities.', 2],
-      ['We support and enable the formation of Employee Resource Groups and has feedback loops for action in place.', 2]
+      ['We support and enable the formation of Employee Resource Groups and has feedback loops for action in place.', 2],
+      ['Diversity and inclusion considerations and goals have been integrated into all function and departmental strategies across our organization.', 3],
+      ['We have a supplier diversity policy that provides equal opportunity for all suppliers, regardless of gender, race, age, education, disability, religion, sexual orientation, background, or family situation.', 3],
+      ['All customer experience, marketing, brand and product development employees have participated in at least one diversity and inclusion or cultural sensitivity training session in the past 12 months.', 3],
+      ['Our company has policies in place to ensure that marketing and advertising is fair and inclusive.', 3],
+      ['Cultural competency considerations are  integrated into the company’s brand policies and processes.', 3],
+      ['Cultural competency considerations have been integrated into our product development processes.', 3],
+      ['Our Employees feel valued.', 4],
+      ['Our Employees feel like their achievements have been fairly recognized and rewarded.', 4],
+      ['Our Employees are encouraged to be themselves.', 4],
+      ['Our Employees think outcomes, processes, and communications are fair and respectful.', 4],
+      ['Our Leaders encourage honest feedback and constructive criticism.', 4],
+      ['Our Employees are encouraged to ask questions.', 4],
+      ['Leaders are open to new ideas and innovative approaches.', 4],
+      ['Our Employees have influence over their job responsibilities.', 4],
+      ['Our teams embrace change well.', 4],
+      ['Our Employees are given stretch opportunities.', 4],
+      ['All employees are given clear guidance on career development opportunities and potential promotion pathways.', 4],
+      ['Employees who are willing to learn new knowledge or skills are valued.', 4],
+      ['Work-life balance for employees is a priority for managers and leaders.', 4],
+      ['Flexible working arrangements are available.', 4],
+      ['Family-friendly policies are in place including extended parental leave and family emergency days.', 4]
     ]
     question_list.each do | question |
       Question.create!(
