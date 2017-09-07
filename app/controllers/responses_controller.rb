@@ -15,7 +15,7 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @response = Response.new
-    @question = Question.all
+    @question = Question.find(12)
     @answers = Answer.all
   end
 
