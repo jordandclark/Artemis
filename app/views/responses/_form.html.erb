@@ -18,7 +18,10 @@
 
 
   <div id="quiztest">
+<<<<<<< HEAD
     <% @question.each do |question| %>
+=======
+>>>>>>> 3b98e0d908dfbd0af69cea8f74592a78b9647539
       <div class="row">
         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <div class="form-group text">
@@ -34,7 +37,7 @@
           <%= radio_button_tag(question.id, answer.answer_weight) %> <%= answer.answer_text %> <br>
           <% end %>
         </div>
-
+        <%= binding.pry %>
       </div>
     <hr>
     <% end %>

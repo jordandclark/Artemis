@@ -15,7 +15,11 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @response = Response.new
+<<<<<<< HEAD
     @question = Question.all
+=======
+    @question = Question.find(32)
+>>>>>>> 3b98e0d908dfbd0af69cea8f74592a78b9647539
     @answers = Answer.all
   end
 
