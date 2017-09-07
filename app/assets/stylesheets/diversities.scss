@@ -1,3 +1,21 @@
-// Place all the styles related to the diversities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Progress Bar
+
+.categories-title {
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.progress {
+  height: 50px;
+  .progress-bar {
+    line-height: 50px;
+    font-size: 20px;
+  }
+  span {
+    line-height: 50px;
+    margin-left: 1em;
+    font-weight: bold;
+    font-size: 20px;
+  }
+ }
