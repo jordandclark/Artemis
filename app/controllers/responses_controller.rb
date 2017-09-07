@@ -15,7 +15,7 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @response = Response.new
-    @question = Question.all
+    @question = Question.find(32)
     @answers = Answer.all
   end
 
@@ -71,7 +71,7 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.fetch(:response).permit(:section_number, :user_selection, :user_score, :question_id, :user_selection, :respondent_id)
+      params.fetch(:response).permit(:question_id, :user_selection, :respondent_id)
     end
 
 end
