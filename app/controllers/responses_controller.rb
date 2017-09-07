@@ -15,7 +15,7 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @response = Response.new
-    @question = Question.find(12)
+    @question = Question.all
     @answers = Answer.all
   end
 
@@ -26,17 +26,16 @@ class ResponsesController < ApplicationController
   # POST /responses
   # POST /responses.json
   def create
-    @response = Response.new(response_params)
 
-    respond_to do |format|
-      if @response.save
-        format.html { redirect_to @response, notice: 'Response was successfully created.' }
-        format.json { render :show, status: :created, location: @response }
-      else
-        format.html { render :new }
-        format.json { render json: @response.errors, status: :unprocessable_entity }
-      end
+
+    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"])
+    i = 1
+    answer_hash = Hash.new
+    41.times do
+      answer_hash[i.to_s] = params[i.to_s]
+      i += 1
     end
+
   end
 
   # PATCH/PUT /responses/1
