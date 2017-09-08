@@ -69,8 +69,6 @@ $(document).ready(function(){
     $('#email').show();
   });
 
-
-
   $('.bquestion1').click(function(){
     $('#question2').hide();
     $('#question1').show();
@@ -127,24 +125,14 @@ $(document).ready(function(){
 
 <%= form_for [@assessment], url: assessments_path, html: { multipart: true } do |f| %>
 
-<% if assessment.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(assessment.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-    <ul>
-    <% assessment.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
+<!-- 11 Hiring Quiz-->
   <div id="question1" class="well">
     <div class="quiz_box">
-      <p class="text">My friends would say I enjoy learning new technologies.</p>
+      <p class="text">1. My friends would say I enjoy learning new technologies.</p>
       <div class="radio">
         <label>
-          <%= f.radio_button :remoteOneValue, 4, checked: true %> <span>Strongly Agree</span>
+          <%= f.radio_button :remoteOneValue, 4 %>
+          <span>Strongly Agree</span>
         </label>
       </div>
       <div class="radio">
@@ -169,283 +157,338 @@ $(document).ready(function(){
     </div>
   </div>
 
-
-
-
-
-
-  <div id="question2" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, 'When given the choice, I prefer to be given a task list to run with.', :class => "text" %>
+  <div id="question2" class="well">
+    <div class="quiz_box">
+      <p class="text">2. When given the choice, I prefer to be given a task list to run with.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteTwoValue, 4 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteTwoValue, 2 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteTwoValue, 1 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteTwoValue, 0 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion1">Back</a>
+      <a class="btn btn-primary question2">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :remoteTwoValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :remoteTwoValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :remoteTwoValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :remoteTwoValue, 0 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question2">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion1">Back</a>
-      </div>
-
   </div>
 
-  <div id="question3" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, 'I enjoy solving problems.', :class => "text" %>
+  <div id="question3" class="well">
+    <div class="quiz_box">
+      <p class="text">3. I enjoy solving problems.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteThreeValue, 4 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteThreeValue, 2 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteThreeValue, 1 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteThreeValue, 0 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion2">Back</a>
+      <a class="btn btn-primary question3">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :remoteThreeValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :remoteThreeValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :remoteThreeValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :remoteThreeValue, 0 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question3">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion2">Back</a>
-      </div>
   </div>
 
-  <div id="question4" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, 'I work best in a social environment.', :class => "text" %>
+  <div id="question4" class="well">
+    <div class="quiz_box">
+      <p class="text">4. I work best in a social environment.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFourValue, 0 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFourValue, 1 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFourValue, 2 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFourValue, 4 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion3">Back</a>
+      <a class="btn btn-primary question4">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :remoteFourValue, 0 %> Strongly Agree<br>
-        <%= f.radio_button :remoteFourValue, 1 %> Moderately Agree<br>
-        <%= f.radio_button :remoteFourValue, 2 %> Moderately Disagree<br>
-        <%= f.radio_button :remoteFourValue, 4 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question4">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion3">Back</a>
-      </div>
   </div>
 
-
-  <div id="question5" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, 'When I start my day, I respond to all emails before reviewing priorities for the day.', :class => "text" %>
+  <div id="question5" class="well">
+    <div class="quiz_box">
+      <p class="text">5. When I start my day, I respond to all emails before reviewing priorities for the day.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFiveValue, 0 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFiveValue, 1 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFiveValue, 2 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :remoteFiveValue, 4 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion4">Back</a>
+      <a class="btn btn-primary question5">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :remoteFiveValue, 0 %> Strongly Agree<br>
-        <%= f.radio_button :remoteFiveValue, 1 %> Moderately Agree<br>
-        <%= f.radio_button :remoteFiveValue, 2 %> Moderately Disagree<br>
-        <%= f.radio_button :remoteFiveValue, 4 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question5">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion4">Back</a>
-
-      </div>
   </div>
 
-  <div id="question6" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, ' I like to multitask on conference calls.', :class => "text" %>
+  <div id="question6" class="well">
+    <div class="quiz_box">
+      <p class="text">6. I like to multitask on conference calls.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyOneValue, 4 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyOneValue, 2 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyOneValue, 1 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyOneValue, 0 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion5">Back</a>
+      <a class="btn btn-primary question6">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :strategyOneValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :strategyOneValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :strategyOneValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :strategyOneValue, 0 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question6">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion5">Back</a>
-      </div>
   </div>
 
-  <div id="question7" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, "I'm willing to try a new approach or process even if it might not work.", :class => "text" %>
+  <div id="question7" class="well">
+    <div class="quiz_box">
+      <p class="text">7. I'm willing to try a new approach or process even if it might not work.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyTwoValue, 4 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyTwoValue, 2 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyTwoValue, 1 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyTwoValue, 0 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion6">Back</a>
+      <a class="btn btn-primary question7">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :strategyTwoValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :strategyTwoValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :strategyTwoValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :strategyTwoValue, 0 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question7">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion6">Back</a>
-
-      </div>
   </div>
 
-  <div id="question8" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, 'If the internet were to go down at work and I had an important assignment to finish, I’d stay on the phone with the internet provider as long as it took and let my boss know my work might be late.', :class => "text", :style => "font-size:12px;" %>
+  <div id="question8" class="well">
+    <div class="quiz_box">
+      <p class="text">8. If the internet were to go down at work and I had an important assignment to finish, I’d stay on the phone with the internet provider as long as it took and let my boss know my work might be late.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyThreeValue, 0 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyThreeValue, 1 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyThreeValue, 2 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyThreeValue, 4 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion7">Back</a>
+      <a class="btn btn-primary question8">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :strategyThreeValue, 0 %> Strongly Agree<br>
-        <%= f.radio_button :strategyThreeValue, 1 %> Moderately Agree<br>
-        <%= f.radio_button :strategyThreeValue, 2 %> Moderately Disagree<br>
-        <%= f.radio_button :strategyThreeValue, 4 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question8">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion7">Back</a>
-
-      </div>
   </div>
 
-  <div id="question9" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, ' I’m okay with not being an expert in everything I do.', :class => "text" %>
+  <div id="question9" class="well">
+    <div class="quiz_box">
+      <p class="text">9. I’m okay with not being an expert in everything I do.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFourValue, 4 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFourValue, 2 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFourValue, 1 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFourValue, 0 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion8">Back</a>
+      <a class="btn btn-primary question9">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :strategyFourValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :strategyFourValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :strategyFourValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :strategyFourValue, 0 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question9">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion8">Back</a>
-
-      </div>
   </div>
 
-  <div id="question10" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, "Giving presentations isn’t my thing.", :class => "text" %>
+  <div id="question10" class="well">
+    <div class="quiz_box">
+      <p class="text">10. Giving presentations isn’t my thing.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFiveValue, 0 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFiveValue, 1 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFiveValue, 2 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategyFiveValue, 4 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion9">Back</a>
+      <a class="btn btn-primary question10">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :strategyFiveValue, 0 %> Strongly Agree<br>
-        <%= f.radio_button :strategyFiveValue, 1 %> Moderately Agree<br>
-        <%= f.radio_button :strategyFiveValue, 2 %> Moderately Disagree<br>
-        <%= f.radio_button :strategyFiveValue, 4 %> Strongly Disagree<br>
-      </div>
-
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question10">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion9">Back</a>
-      </div>
   </div>
 
-  <div id="question11" class="row well">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="form-group">
-      <%= f.label :name, "I already or would like to provide ways to give back to my community.", :class => "text" %>
+  <div id="question11" class="well">
+    <div class="quiz_box">
+      <p class="text">11. I already or would like to provide ways to give back to my community.</p>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategySixValue, 4 %>
+          <span>Strongly Agree</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategySixValue, 2 %>
+          <span>Moderately Agree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategySixValue, 1 %>
+          <span>Moderately Disagree</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :strategySixValue, 0 %>
+          <span>Strongly Disagree</span>
+        </label>
+      </div>
+      <a class="btn btn-primary bquestion10">Back</a>
+      <a class="btn btn-primary question11">Next</a>
     </div>
-
-    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-      <div class="line"></div>
-    </div>
-
-      <div class="radio col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <%= f.radio_button :strategySixValue, 4 %> Strongly Agree<br>
-        <%= f.radio_button :strategySixValue, 2 %> Moderately Agree<br>
-        <%= f.radio_button :strategySixValue, 1 %> Moderately Disagree<br>
-        <%= f.radio_button :strategySixValue, 0 %> Strongly Disagree<br>
-      </div>
-      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <a style="margin-top:20px;" class="btn btn-primary question11">Next</a>
-        <div class="spacer" style="padding:10px;"></div>
-        <a class="btn btn-primary bquestion10">Back</a>
-      </div>
   </div>
 
-  <div id="email" class="row well">
-    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-
-    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+  <div id="email" class="well">
+    <div class="quiz_user_info">
+      <p class="text">Please tell us a little bit about yourself to see your results.</p>
       <div class="form-group">
-      <%= f.label :name, "Please fill out your name and email in order to see your results", :class => "text" %>
-      <br>
-      <br>
-      <%= f.text_field :name, placeholder: "First and Last" %>
-      <br>
-      <br>
-      <%= f.text_field :email, placeholder: "Email" %>
-      <br>
-      <br>
-      <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+        <%= f.text_field :name, placeholder: "First & Last Name", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
+      </div>
+      <%= f.submit 'See Results', :class => 'btn btn-primary btn-submit' %>
       </div>
     </div>
-    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
   </div>
+
 <% end %>

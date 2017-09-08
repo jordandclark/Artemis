@@ -36,29 +36,62 @@
 // Quix Body
 
 .quiz_body {
-  h1 {
-    margin-bottom: 0.6em;
+  h3 {
+    margin-bottom: 1em;
   }
 }
 
 
 .quiz_box {
   padding-top: 1em;
+  width: 75%;
+  margin: 0 auto;
+  font-family: 'proxima-bold', sans-serif;
   .text{
-    font-family: 'proxima-bold', sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #2162ba;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    margin-left: 1.5em;
+    margin-bottom: 1em;
+  }
+  .radio {
+    margin-left: 0;
+    margin-bottom: 1em;
+    label {
+      font-size: 16px;
+    }
   }
   a {
     display: inline-block;
-    margin-left: 1.5em;
-    margin-top: 1em;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
   }
 }
+
+.quiz_user_info {
+  padding-top: 1em;
+  width: 75%;
+  margin: 0 auto;
+  font-family: 'proxima-bold', sans-serif;
+  .text{
+    letter-spacing: 2px;
+    text-transform: uppercase;    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 1.2em;
+  }
+  .form-group {
+    .form-control {
+      width: 60%;
+    }
+  }
+  .btn-submit {
+    display: inline-block;
+    margin-top: 0.8em;
+  }
+}
+
+
 
 @font-face {
   font-family: 'proxima-bold';
