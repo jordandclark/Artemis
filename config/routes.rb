@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :diversities
   resources :assessments
+  resources :quizzes
 
 
 
