@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901230538) do
+ActiveRecord::Schema.define(version: 20170908000022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,11 +119,10 @@ ActiveRecord::Schema.define(version: 20170901230538) do
   create_table "responses", force: :cascade do |t|
     t.bigint "respondent_id"
     t.bigint "question_id"
-    t.integer "section_number"
     t.string "user_selection"
-    t.integer "user_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "answer_hash"
     t.index ["question_id"], name: "index_responses_on_question_id"
     t.index ["respondent_id"], name: "index_responses_on_respondent_id"
   end
