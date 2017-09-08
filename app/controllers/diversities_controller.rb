@@ -13,16 +13,17 @@ class DiversitiesController < ApplicationController
     @dandi = Diversity.find(params[:id])
 
     diverse = @dandi.diversityOneValue + @dandi.diversityTwoValue + @dandi.diversityThreeValue + @dandi.diversityFourValue + @dandi.diversityFiveValue + @dandi.diversitySixValue + @dandi.diversitySevenValue + @dandi.diversityEightValue +  @dandi.diversityNineValue + @dandi.diversityTenValue
-    @diversityAvg = diverse/10
+    @diversityScore = diverse/10/5.to_f
+
 
     employee = @dandi.employmentOneValue + @dandi.employmentTwoValue + @dandi.employmentThreeValue + @dandi.employmentFourValue + @dandi.employmentFiveValue + @dandi.employmentSixValue + @dandi.employmentSevenValue + @dandi.employmentEightValue + @dandi.employmentNineValue + @dandi.employmentTenValue + @dandi.employmentElevenValue + @dandi.employmentTwelveValue + @dandi.employmentThirteenValue + @dandi.employmentFourteenValue
-    @employmentAvg = employee/14
+    @employmentScore = employee/14/5.to_f
 
     comm = @dandi.commOneValue + @dandi.commTwoValue + @dandi.commThreeValue + @dandi.commFourValue + @dandi.commFiveValue
-    @commAvg = comm/5
+    @commScore = comm/5/5.to_f
 
     culture = @dandi.cultureOneValue + @dandi.cultureTwoValue + @dandi.cultureThreeValue + @dandi.cultureFourValue + @dandi.cultureFiveValue + @dandi.cultureSixValue + @dandi.cultureSevenValue + @dandi.cultureEightValue + @dandi.cultureNineValue + @dandi.cultureTenValue + @dandi.cultureElevenValue + @dandi.cultureTwelveValue + @dandi.cultureThirteenValue + @dandi.cultureFourteenValue + @dandi.cultureFifteenValue
-    @cultureAvg = culture/15
+    @cultureScore = culture/15/5.to_f
 
   end
 

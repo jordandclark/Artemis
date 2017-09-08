@@ -13,7 +13,16 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :diversities
-  resources :assessments
+
+  # Hiring Quiz
+  resources :assessments, except: [:new]
+
+  get '/quiz_intro', to: 'assessments#intro'
+  get '/hiring_quiz', to: 'assessments#new'
+
+
+
+
 
 
 

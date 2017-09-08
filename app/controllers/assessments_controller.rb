@@ -19,6 +19,11 @@ class AssessmentsController < ApplicationController
     @totalScore = @assessments.remoteOneValue + @assessments.remoteTwoValue + @assessments.remoteThreeValue + @assessments.remoteFourValue + @assessments.remoteFiveValue + @assessments.strategyOneValue + @assessments.strategyTwoValue + @assessments.strategyThreeValue + @assessments.strategyFourValue + @assessments.strategyFiveValue + @assessments.strategySixValue;
   end
 
+  # Quiz Intro
+
+  def intro
+  end  
+
   # GET /assessments/new
   def new
     @assessment = Assessment.new

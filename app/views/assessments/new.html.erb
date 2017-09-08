@@ -1,5 +1,20 @@
-<h1 style="text-align:center;">Is Artemis right for you?</h1>
+<div class="container quiz_body">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1 style="text-align:center;">Is Artemis right for you?</h1>
+      <%= render 'form', assessment: @assessment %>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <% if @assessment.errors.any? %>
+          <h2><%= pluralize(@assessment.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-
-
-  <%= render 'form', assessment: @assessment %>
+          <ul>
+          <% @assessment.errors.each do | name, message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
