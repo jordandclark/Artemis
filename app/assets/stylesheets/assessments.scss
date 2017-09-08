@@ -4,6 +4,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+// Quiz Intro
+
+.quiz_intro {
+  h1 {
+    text-align: center;
+    margin-bottom: 0.8em;
+  }
+  .well {
+    padding: 2em 4em;
+    p {
+    font-size: 1.5em;
+    line-height: 1.8;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      &:hover {
+        text-decoration: none;
+      }
+      span {
+        font-size: 1.5em;
+        margin-right: 1em;
+      }
+    }
+  }
+
+}
+
 .line{
   height:150px;
   width:1px;
@@ -37,32 +67,3 @@
   font-family: 'proxima-thin';
   font-weight:lighter;
 }
-
-//  **hiring page style(test)
-
-// .radio label {
-//   font-size: 1.2em;
-//   span {
-//     margin-left: 0.2em;
-//   }
-// }
-//
-// .radio input {
-//   width: 1em;
-//   height: 1em;
-// }
-
-// .well1 {
-//   background-color: #f5f5f5;
-//   border: 1px solid #e3e3e3;
-//   margin-top: 2em;
-//   padding: 2em 6em;
-//   h3 {
-//     line-height: 1.5;
-//   }
-//   a {
-//     padding: 5px 10px;
-//     font-size: 1.2em;
-//     margin-top: 15px;
-//   }
-// }
