@@ -4,6 +4,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.line{
+  height:150px;
+  width:1px;
+  background:#000;
+}
+
 @font-face {
   font-family: 'proxima-bold';
   src: url('proxima.otf') format('truetype');
@@ -14,14 +20,17 @@
   src: url('proxima-thin.otf') format('truetype');
 }
 
-.text {
+.text{
   font-family: 'proxima-bold', sans-serif;
   letter-spacing: 2px;
-  margin-bottom: 1em;
   text-transform: uppercase;
   color: #2162ba;
   font-size: 20px;
   font-weight: 700;
+}
+
+.radio{
+  margin-left: 30px;
 }
 
 .smaller_text{
@@ -29,29 +38,31 @@
   font-weight:lighter;
 }
 
-.radio label {
-  font-size: 1.2em;
-  span {
-    margin-left: 0.2em;
-  }
-}
+//  **hiring page style(test)
 
-.radio input {
-  width: 1em;
-  height: 1em;
-}
+// .radio label {
+//   font-size: 1.2em;
+//   span {
+//     margin-left: 0.2em;
+//   }
+// }
+//
+// .radio input {
+//   width: 1em;
+//   height: 1em;
+// }
 
-.well1 {
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  margin-top: 2em;
-  padding: 2em 6em;
-  h3 {
-    line-height: 1.5;
-  }
-  a {
-    padding: 5px 10px;
-    font-size: 1.2em;
-    margin-top: 15px;
-  }
-}
+// .well1 {
+//   background-color: #f5f5f5;
+//   border: 1px solid #e3e3e3;
+//   margin-top: 2em;
+//   padding: 2em 6em;
+//   h3 {
+//     line-height: 1.5;
+//   }
+//   a {
+//     padding: 5px 10px;
+//     font-size: 1.2em;
+//     margin-top: 15px;
+//   }
+// }
