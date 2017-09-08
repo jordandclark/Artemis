@@ -28,7 +28,7 @@ class ResponsesController < ApplicationController
   def create
 
 
-    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil)
+    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, )
 
 
     i = 32
@@ -38,7 +38,10 @@ class ResponsesController < ApplicationController
       i += 1
     end
 
-    @response.update(answer_hash: answer_hash)
+    one_hash = answer_hash.select {|k,v|v == "1"}
+    two_hash = answer_hash.select {|k,v|v == "2"}
+    three_hash = answer_hash.select {|k,v|v == "3"}
+    @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash)
     @response.save
     binding.pry
 
