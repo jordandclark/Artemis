@@ -13,7 +13,14 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :diversities
+
+  # Hiring Quiz
   resources :assessments
+
+  get '/quiz_intro', to: 'assessments#intro'
+
+
+
 
 
 
