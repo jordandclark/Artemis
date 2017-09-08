@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :respondents do
+    resources :responses
+  end
+
   root :to => 'welcomes#index'
 
   resources :welcomes, only: [:index]
