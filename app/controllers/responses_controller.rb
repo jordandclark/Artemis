@@ -28,13 +28,22 @@ class ResponsesController < ApplicationController
   def create
 
 
-    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"])
-    i = 1
+    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, )
+
+
+    i = 32
     answer_hash = Hash.new
     41.times do
-      answer_hash[i.to_s] = params[i.to_s]
+      answer_hash[i.to_s] = params["question_id " + i.to_s]
       i += 1
     end
+
+    one_hash = answer_hash.select {|k,v|v == "1"}
+    two_hash = answer_hash.select {|k,v|v == "2"}
+    three_hash = answer_hash.select {|k,v|v == "3"}
+    @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash)
+    @response.save
+    binding.pry
 
   end
 
@@ -70,7 +79,7 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.fetch(:response).permit(:section_number, :user_selection, :user_score, :question_id, :user_selection, :respondent_id)
+      params.fetch(:response).permit(:section_number, :user_selection, :user_score, :question_id, :user_selection, :respondent_id, :answer_hash)
     end
 
 end
