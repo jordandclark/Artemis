@@ -2,7 +2,6 @@
 
 
   <%= form_for @response, url: respondent_responses_path, html: { multipart: true } do |f| %>
-  <% f.hidden_field :question_id, value: @question %>
 
     <% if @response.errors.any? %>
       <div id="error_explanation">
@@ -31,7 +30,7 @@
 
         <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <% question.answers.each do |answer| %>
-          <%= radio_button_tag(question.id, answer.answer_weight) %> <%= answer.answer_text %> <br>
+          <%= radio_button_tag([:question_id,question.id], [:user_selection,answer.answer_weight]) %> <%= answer.answer_text %> <br>
           <% end %>
         </div>
       </div>
