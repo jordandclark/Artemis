@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   get '/quiz_intro', to: 'assessments#intro'
 
+  get '/hiring_quiz', to: 'assessments#new'
+
+
 
 
 

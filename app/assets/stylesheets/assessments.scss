@@ -13,7 +13,7 @@
     margin-bottom: 0.8em;
   }
   .well {
-    padding: 2em 4em;
+    padding: 3em 4em 2em;
     p {
     font-size: 1.5em;
     line-height: 1.8;
@@ -31,13 +31,33 @@
       }
     }
   }
-
 }
 
-.line{
-  height:150px;
-  width:1px;
-  background:#000;
+// Quix Body
+
+.quiz_body {
+  h1 {
+    margin-bottom: 0.6em;
+  }
+}
+
+
+.quiz_box {
+  padding-top: 1em;
+  .text{
+    font-family: 'proxima-bold', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2162ba;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 1.5em;
+  }
+  a {
+    display: inline-block;
+    margin-left: 1.5em;
+    margin-top: 1em;
+  }
 }
 
 @font-face {
@@ -50,14 +70,7 @@
   src: url('proxima-thin.otf') format('truetype');
 }
 
-.text{
-  font-family: 'proxima-bold', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #2162ba;
-  font-size: 20px;
-  font-weight: 700;
-}
+
 
 .radio{
   margin-left: 30px;
