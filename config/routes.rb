@@ -15,11 +15,11 @@ Rails.application.routes.draw do
   resources :diversities
 
   # Hiring Quiz
-  resources :assessments
+  resources :assessments, except: [:new]
 
   get '/quiz_intro', to: 'assessments#intro'
-
   get '/hiring_quiz', to: 'assessments#new'
+
 
 
 
