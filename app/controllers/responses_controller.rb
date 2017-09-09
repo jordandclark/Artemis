@@ -43,7 +43,6 @@ class ResponsesController < ApplicationController
     three_hash = answer_hash.select {|k,v|v == "3"}
     @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash)
     @response.save
-    binding.pry
 
   end
 
