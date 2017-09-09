@@ -20,19 +20,22 @@
 @import "font-awesome";
 
  #header {
-     padding:10px 30px;
-     -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-     box-sizing: border-box;
-     z-index: 1000;
-     top: -20px;
-     left: 0;
-     width: 100%;
-     line-height: 1em;
-     background-color: #c8c9cb;
-     -moz-osx-font-smoothing: auto;
-     -webkit-font-smoothing: subpixel-antialiased;
-     position: relative;
+  padding: 1.5em 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+  line-height: 1em;
+  background-color: #c8c9cb;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  position: relative;
+ }
+
+ #logoImage {
+     margin: 0;
+     font-size: 0;
+     max-width: 100%;
  }
 
  #logoImage img {
@@ -49,6 +52,65 @@ h1{
   letter-spacing: .63px;
   font-family: 'proxima-bold';
   margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 641px){
+  #header #logoWrapper, #header #logoImage {
+    max-width: 315px;
+  }
+}
+@media only screen and (min-width: 641px) {
+#header #logoWrapper, #header #siteTitleWrapper, #header #headerNav {
+    box-sizing: border-box;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+#header {
+  #logoWrapper {
+    float: left;
+  }
+  .header-nav {
+    float: right;
+    list-style: none;
+    margin-top: 22px;
+    margin-right: 1em;
+    li {
+      float: left;
+      margin-right: 0.2em;
+      a {
+        display: block;
+        padding: 1em 1.5em;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 12.5px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 1em;
+        background: transparent;
+      }
+      .nav-contact {
+        border: 2px solid #fff;
+        border-radius: 300px;
+        margin-left: 1em;
+        padding: 1em 1.5em;
+        &:hover {
+          color: #000;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 #paragraph{
