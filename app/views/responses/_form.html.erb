@@ -1,6 +1,14 @@
+<script>
+$(document).ready(function(){
+  event.preventDefault()
+  $('.quiz2').hide();
+  $('.quiz3').hide();
+  $('.quiz4').hide();
+
+});
+</script>
+
 <div class="container">
-
-
   <%= form_for @response, url: respondent_responses_path, html: { multipart: true } do |f| %>
 
     <% if @response.errors.any? %>
@@ -16,9 +24,59 @@
     <% end %>
 
 
-  <div id="quiztest">
-    <% @question.each do |question| %>
-    <%= f.hidden_field :question_id, value: question.id %>
+<% @question.each do |question| %>
+<% if question.section_number == 1 %>
+  <div class="quiz1">
+        <div class="row">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <div class="form-group text">
+            <%= question.question_text %>
+            </div>
+          </div>
+          <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+            <div class="line"></div>
+          </div>
+
+          <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <% question.answers.each do |answer| %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+            <% end %>
+          </div>
+        </div>
+      <hr>
+    </div>
+  <% if question.id == 5 %>
+    <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+    <div class="spacer" style="padding:10px;"></div>
+  <% end %>
+
+<% elsif question.section_number == 2 %>
+  <div class="quiz2">
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <div class="form-group text">
+        <%= question.question_text %>
+        </div>
+      </div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+        <div class="line"></div>
+      </div>
+
+      <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <% question.answers.each do |answer| %>
+        <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <% if question.id == 51  %>
+    <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+    <div class="spacer" style="padding:10px;"></div>
+  <% end %>
+
+<% elsif question.section_number == 3 %>
+  <div class="quiz3">
       <div class="row">
         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <div class="form-group text">
@@ -36,9 +94,38 @@
         </div>
       </div>
     <hr>
-    <% end %>
   </div>
-  <%= f.submit 'Submit', :class => 'btn btn-primary' %>
 
+  <% if question.id == 51  %>
+    <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+    <div class="spacer" style="padding:10px;"></div>
+  <% end %>
+
+  <% elsif question.section_number == 4 %>
+    <div class="quiz4">
+      <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <div class="form-group text">
+          <%= question.question_text %>
+          </div>
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+          <div class="line"></div>
+        </div>
+
+        <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <% question.answers.each do |answer| %>
+          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <% else %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+  <% end %>
+
+  <% end %>
 </div>
-<% end %>
+
+    <% end %>

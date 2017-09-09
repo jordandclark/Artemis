@@ -31,7 +31,7 @@ class ResponsesController < ApplicationController
     @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, )
 
 
-    i = 32
+    i = 1
     answer_hash = Hash.new
     41.times do
       answer_hash[i.to_s] = params["question_id " + i.to_s]
@@ -43,7 +43,6 @@ class ResponsesController < ApplicationController
     three_hash = answer_hash.select {|k,v|v == "3"}
     @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash)
     @response.save
-    binding.pry
 
   end
 
