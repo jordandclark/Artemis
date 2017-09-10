@@ -9,35 +9,34 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
-  <header id="header" class="show-on-scroll" data-offset-el=".index-section" data-offset-behavior="bottom" role="banner">
-    <div class="header-inner clearfix">
-      <div id="logoWrapper" class="wrapper" data-content-field="site-title">
-        <h1 id="logoImage">
-          <a href="/">
-            <img src="header/artemis-logo.png"></a>
-          </h1>
-      </div>
-      <ul class="header-nav">
-        <li>
-          <a href="http://www.artemisconnection.com/">Home</a>
-        </li>
-        <li>
-          <a href="http://www.artemisconnection.com/work/">work</a>
-        </li>
-        <li>
-          <a href="http://www.artemisconnection.com/team/">Team</a>
-        </li>
-        <li>
-          <a href="http://www.artemisconnection.com/blog/">Blog</a>
-        </li>
-        <li>
-          <a href="http://www.artemisconnection.com/contact/"  class="nav-contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-
   <body>
-      <%= yield %>
+    <header id="header" class="show-on-scroll" data-offset-el=".index-section" data-offset-behavior="bottom" role="banner">
+      <div class="header-inner clearfix">
+        <div id="logoWrapper" class="wrapper" data-content-field="site-title">
+          <h1 id="logoImage">
+            <a href="/">
+              <img src="header/artemis-logo.png"></a>
+            </h1>
+        </div>
+        <ul class="header-nav">
+          <li>
+            <a href="http://www.artemisconnection.com/">Home</a>
+          </li>
+          <li>
+            <a href="http://www.artemisconnection.com/work/">work</a>
+          </li>
+          <li>
+            <a href="http://www.artemisconnection.com/team/">Team</a>
+          </li>
+          <li>
+            <a href="http://www.artemisconnection.com/blog/">Blog</a>
+          </li>
+          <li>
+            <a href="http://www.artemisconnection.com/contact/"  class="nav-contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <%= yield %>
   </body>
 </html>

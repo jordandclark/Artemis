@@ -19,6 +19,7 @@
 @import "diversities.scss";
 @import "font-awesome";
 
+
  #header {
   padding: 1.5em 20px;
   box-sizing: border-box;
@@ -40,7 +41,7 @@
 
  #logoImage img {
     height: auto;
-    max-height: 100px;
+    // max-height: 100px;
     width: auto;
     max-width: 100%;
 }
@@ -54,18 +55,16 @@ h1{
   margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 641px){
-  #header #logoWrapper, #header #logoImage {
+#header #logoWrapper, #header #logoImage {
     max-width: 315px;
-  }
 }
-@media only screen and (min-width: 641px) {
-#header #logoWrapper, #header #siteTitleWrapper, #header #headerNav {
-    box-sizing: border-box;
-    display: table-cell;
-    vertical-align: middle;
-  }
-}
+// @media only screen and (min-width: 641px) {
+// #header #logoWrapper, #header #siteTitleWrapper, #header #headerNav {
+//     box-sizing: border-box;
+//     display: table-cell;
+//     vertical-align: middle;
+//   }
+// }
 
 #header {
   #logoWrapper {
@@ -74,14 +73,14 @@ h1{
   .header-nav {
     float: right;
     list-style: none;
-    margin-top: 22px;
+    margin-top: 21px;
     margin-right: 1em;
     li {
       float: left;
       margin-right: 0.2em;
       a {
         display: block;
-        padding: 1em 1.5em;
+        padding: 1em 1.3em;
         color: #fff;
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
@@ -104,6 +103,12 @@ h1{
         }
       }
     }
+  }
+}
+
+@media (max-width: 878px) {
+  .header-nav {
+    display: none;
   }
 }
 
