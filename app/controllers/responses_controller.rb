@@ -23,6 +23,11 @@ class ResponsesController < ApplicationController
       @ones.push(Question.find(i[0]).question_text)
     end
 
+    @onesWeight = []
+    groups.each do |i|
+      @onesWeight.push(Answer.find(i[0]).answer_weight)
+    end
+
   end
 
   # GET /responses/new
