@@ -58,7 +58,20 @@ class Seed
       ['Employees who are willing to learn new knowledge or skills are valued.', 4],
       ['Work-life balance for employees is a priority for managers and leaders.', 4],
       ['Flexible working arrangements are available.', 4],
-      ['Family-friendly policies are in place including extended parental leave and family emergency days.', 4]
+      ['Family-friendly policies are in place including extended parental leave and family emergency days.', 4],
+      ['Our diversity and inclusion approach, goals and policies have been integrated into all community partner and network agreements.', 5],
+      ['Our CSR/Community engagement strategy demonstrates our commitment to diversity and inclusion.', 5],
+      ['We only support organizations that comply with our diversity, inclusion and nondiscrimination policy.', 5],
+      ['The organization has an official definition and shared understanding of diversity and inclusion that is shared and understood by employees at all levels.', 6],
+      ['Employees at all levels can easily describe why diversity and inclusion are important for our organization.', 6],
+      ['The organization is transparent about its diversity and inclusion activities and makes information available to its employees, suppliers, consumers, and the public on its website.', 6],
+      ['The organization’s diversity, inclusion, and nondiscrimination policy is prominently posted on our website and other public places.', 6],
+      ['The organization regularly communicates its diversity and inclusion metrics and progress.', 6],
+      ['The organization has an open door policy when it comes to issues diversity and inclusion related issues or concerns.', 6],
+      ['We have developed and established metrics for measuring the diversity of our workforce.', 7],
+      ['We have measured the gender, race, age, and ethnicity breakdown by role, level, and department in the last year.', 7],
+      ['Diversity and inclusion metrics are reviewed on a regular basis to evaluate and assess the progress of diversity and inclusion efforts.', 7],
+      ['A pay equity analysis was conducted in the last year.', 7]
     ]
     question_list.each do | question |
       Question.create!(
