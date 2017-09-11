@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Question.destroy_all
 Answer.destroy_all
-
+Response.destroy_all
 
 class Seed
 

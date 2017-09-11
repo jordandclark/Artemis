@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908225500) do
+ActiveRecord::Schema.define(version: 20170911175801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,7 +137,6 @@ ActiveRecord::Schema.define(version: 20170908225500) do
 
   create_table "responses", force: :cascade do |t|
     t.bigint "respondent_id"
-    t.bigint "question_id"
     t.string "user_selection"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -145,7 +144,13 @@ ActiveRecord::Schema.define(version: 20170908225500) do
     t.text "one_hash"
     t.text "two_hash"
     t.text "three_hash"
-    t.index ["question_id"], name: "index_responses_on_question_id"
+    t.text "section_one", default: [], array: true
+    t.text "section_two", default: [], array: true
+    t.text "section_three", default: [], array: true
+    t.text "section_four", default: [], array: true
+    t.text "section_five", default: [], array: true
+    t.text "section_six", default: [], array: true
+    t.text "section_seven", default: [], array: true
     t.index ["respondent_id"], name: "index_responses_on_respondent_id"
   end
 
@@ -169,6 +174,5 @@ ActiveRecord::Schema.define(version: 20170908225500) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "responses", "questions"
   add_foreign_key "responses", "respondents"
 end
