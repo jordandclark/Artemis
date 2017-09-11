@@ -10,6 +10,16 @@ class ResponsesController < ApplicationController
   # GET /responses/1
   # GET /responses/1.json
   def show
+    to = @response.one_hash
+    to.delete! '\\"" {}'
+    to.gsub!(/=>/,',')
+    split = to.split(",")
+    array = eval split.to_s.gsub('"', '')
+    groups = array.in_groups_of(2)
+   @ones = []
+    groups.each do |i|
+      @ones.push(Question.find(i[0]).question_text)
+    end
   end
 
   # GET /responses/new
@@ -26,10 +36,9 @@ class ResponsesController < ApplicationController
   # POST /responses
   # POST /responses.json
   def create
+    @question = Question.all
 
-
-    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, )
-
+    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil)
 
     i = 1
     answer_hash = Hash.new
@@ -44,10 +53,20 @@ class ResponsesController < ApplicationController
     @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash)
     @response.save
 
+
+    respond_to do |format|
+      if @response.save
+        format.html { redirect_to respondent_response_url(:id => @response.id), notice: 'Response was successfully created.' }
+        format.json { render :show, status: :created, location: @response }
+      else
+        format.html { render :new }
+        format.json { render json: @response.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
-  # PATCH/PUT /responses/1
-  # PATCH/PUT /responses/1.json
+
   def update
     respond_to do |format|
       if @response.update(response_params)
