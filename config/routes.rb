@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   resources :respondents, except: [:index] do
     resources :responses
   end
-  get '/diversity_intro', to: 'respondents#intro'
+  get '/diversity_intro', to: 'respondents#new'
 end
