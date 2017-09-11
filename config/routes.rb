@@ -12,14 +12,17 @@ Rails.application.routes.draw do
   get '/quiz_intro', to: 'assessments#intro'
   get '/hiring_quiz', to: 'assessments#new'
 
-  resources :respondents do
-    resources :responses
-  end
 
-  # D & I assessments
+
+  # D & I assessments (original)
   resources :diversity_results, only: [:index]
   resources :diversities, except: [:new]
-  get '/diversity_intro', to: 'diversities#intro'
+  # get '/diversity_intro', to: 'diversities#intro'
   get '/diversity_assessment', to: 'diversities#new'
 
+  ## D & I assessments (updated) ##
+  resources :respondents, except: [:index] do
+    resources :responses
+  end
+  get '/diversity_intro', to: 'respondents#intro'
 end
