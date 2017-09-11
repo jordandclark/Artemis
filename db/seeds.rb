@@ -67,7 +67,7 @@ class Seed
       ['Our diversity and inclusion approach, goals and policies have been integrated into all community partner and network agreements.', 5],
       ['Our CSR/Community engagement strategy demonstrates our commitment to diversity and inclusion.', 5],
       ['We only support organizations that comply with our diversity, inclusion and nondiscrimination policy.', 5],
-      ['We support community and nonprofit organizations that focus on improving and/or promoting diversity and inclusion.', 5]
+      ['We support community and nonprofit organizations that focus on improving and/or promoting diversity and inclusion.', 5],
       ['The organization has an official definition and shared understanding of diversity and inclusion that is shared and understood by employees at all levels.', 6],
       ['Employees at all levels can easily describe why diversity and inclusion are important for our organization.', 6],
       ['The organization is transparent about its diversity and inclusion activities and makes information available to its employees, suppliers, consumers, and the public on its website.', 6],
@@ -107,35 +107,35 @@ class Seed
         }]
       )
     end
-  end
-  culture.each do |culture|
-    Question.create!(
-      section_number: question[1],
-      question_text: question[0],
-      :answers_attributes => [
-      {
-        answer_text: 'Strongly agree.',
-        answer_weight: 5
-      },
-      {
-        answer_text: 'Agree.',
-        answer_weight: 4
-      },
-      {
-        answer_text: 'Neither agree nor disagree.',
-        answer_weight: 3
-      },
-      {
-        answer_text: 'Disagree.',
-        answer_weight: 2
-      },
-      {
-        answer_text: 'Strongly disagree.',
-        answer_weight: 1
-      }]
-    )
+
+    culture.each do |culture|
+      Question.create!(
+      section_number: culture[1],
+      question_text: culture[0],
+        :answers_attributes => [
+        {
+          answer_text: 'Strongly agree.',
+          answer_weight: 5
+        },
+        {
+          answer_text: 'Agree.',
+          answer_weight: 4
+        },
+        {
+          answer_text: 'Neither agree nor disagree.',
+          answer_weight: 3
+        },
+        {
+          answer_text: 'Disagree.',
+          answer_weight: 2
+        },
+        {
+          answer_text: 'Strongly disagree.',
+          answer_weight: 1
+        }]
+        )
     end
-  end
+
   question_list_two.each do | question |
     Question.create!(
       section_number: question[1],
@@ -162,7 +162,8 @@ class Seed
         answer_weight: 5
       }]
     )
-    end
   end
 
+end
+end
 Seed.begin
