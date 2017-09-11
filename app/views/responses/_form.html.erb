@@ -5,8 +5,76 @@ $(document).ready(function(){
   $('.quiz3').hide();
   $('.quiz4').hide();
 
+  $('#quiz2').hide();
+  $('#quiz3').hide();
+  $('#quiz4').hide();
+
+  $('#heading2').hide();
+  $('#heading3').hide();
+  $('#heading4').hide();
+  $('#heading5').hide();
+  $('#heading6').hide();
+  $('#heading7').hide();
+
+  $('#quiz1').click(function(){
+    $('.quiz1').hide();
+    $('.quiz2').show();
+    $('#quiz1').hide();
+    $('#quiz2').show();
+    $('#heading1').hide();
+    $('#heading2').show();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
+  $('#quiz2').click(function(){
+    $('.quiz2').hide();
+    $('.quiz3').show();
+
+    $('#quiz2').hide();
+    $('#quiz3').show();
+    $('#heading2').hide();
+    $('#heading3').show();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
+  $('#quiz3').click(function(){
+    $('.quiz3').hide();
+    $('.quiz4').show();
+    $('#quiz3').hide();
+    $('#quiz4').show();
+    $('#heading3').hide();
+    $('#heading4').show();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
+  $('#quiz4').click(function(){
+    $('.quiz4').hide();
+    $('.quiz5').show();
+    $('#quiz4').hide();
+    $('#quiz5').show();
+    $('#heading4').hide();
+    $('#heading5').show();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
 });
 </script>
+
+<div class="image"></div>
+<div id="description">
+  <div class="container">
+    <p id="heading">Diversity &amp; Inclusion Assessment</p>
+    <p id="paragraph">
+      This tool is meant to enable organizations to benchmark their current diversity and inclusion activities and provide guidance in identifying areas to drive change. Companies that score high demonstrate they are performing at levels considered to be industry best practices while companies that score low demonstrate they have some work to do.
+    </p>
+  </div>
+</div>
+
+<div class="spacer" style="padding:10px;"></div>
 
 <div class="container">
   <%= form_for @response, url: respondent_responses_path, html: { multipart: true } do |f| %>
@@ -22,6 +90,40 @@ $(document).ready(function(){
         </ul>
       </div>
     <% end %>
+
+<div id="heading1">
+  <h3 id="heading1">Commitment and Strategy</h3>
+    <hr>
+</div>
+<div id="heading2">
+  <h3 id="heading2">Talent Management</h3>
+    <hr>
+</div>
+
+<div id="heading3">
+  <h3 id="heading3">Business Processes</h3>
+    <hr>
+</div>
+
+<div id="heading4">
+  <h3 id="heading4">Culture</h3>
+    <hr>
+</div>
+
+<div id="heading5">
+  <h3 >Community Involvement</h3>
+    <hr>
+</div>
+
+<div id="heading6">
+  <h3 id="heading6">Communication</h3>
+    <hr>
+</div>
+
+<div id="heading7">
+  <h3 id="heading7">Measurement and Evaluation</h3>
+    <hr>
+</div>
 
 
 <% @question.each do |question| %>
@@ -48,7 +150,7 @@ $(document).ready(function(){
   <% if question.id == 5 %>
   <%= f.submit 'Submit', :class => 'btn btn-primary' %>
 
-    <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+    <a style="margin-top:20px;" id="quiz1" class="btn btn-primary">Next</a>
     <div class="spacer" style="padding:10px;"></div>
   <% end %>
 
@@ -72,8 +174,8 @@ $(document).ready(function(){
     </div>
     <hr>
   </div>
-  <% if question.id == 51  %>
-    <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+  <% if question.id == 20  %>
+    <a style="margin-top:20px;" id="quiz2" class="btn btn-primary">Next</a>
     <div class="spacer" style="padding:10px;"></div>
   <% end %>
 
@@ -97,11 +199,11 @@ $(document).ready(function(){
       </div>
     <hr>
   </div>
-
-  <% if question.id == 51  %>
-    <a style="margin-top:20px;" class="btn btn-primary quiz1">Next</a>
+  <% if question.id == 26  %>
+    <a style="margin-top:20px;" id="quiz3" class="btn btn-primary">Next</a>
     <div class="spacer" style="padding:10px;"></div>
   <% end %>
+
 
   <% elsif question.section_number == 4 %>
     <div class="quiz4">
@@ -123,6 +225,13 @@ $(document).ready(function(){
       </div>
       <hr>
     </div>
+
+    <% if question.id == 41  %>
+      <a style="margin-top:20px;" id="quiz4" class="btn btn-primary">Next</a>
+      <div class="spacer" style="padding:10px;"></div>
+    <% end %>
+
+
     <% else %>
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   <% end %>
