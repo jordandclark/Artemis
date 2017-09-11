@@ -12,10 +12,6 @@ class RespondentsController < ApplicationController
   def show
   end
 
-  def intro
-    @respondent = Respondent.new
-  end
-
   # GET /respondents/new
   def new
     @respondent = Respondent.new
@@ -32,7 +28,7 @@ class RespondentsController < ApplicationController
     if @respondent.save
       redirect_to diversity_assessment_path
     else
-      render :intro;  
+      render :new;  
     end
   end
 
