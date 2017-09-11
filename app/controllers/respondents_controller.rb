@@ -26,9 +26,9 @@ class RespondentsController < ApplicationController
   def create
     @respondent = Respondent.new(respondent_params)
     if @respondent.save
-      redirect_to diversity_assessment_path
+      redirect_to new_respondent_response_path(@respondent);
     else
-      render :new;  
+      render :new;
     end
   end
 
