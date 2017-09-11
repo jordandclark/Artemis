@@ -64,9 +64,9 @@ class ResponsesController < ApplicationController
     section_two = Array(answer_hash)[5..19]
     section_three = Array(answer_hash)[20..25]
     section_four = Array(answer_hash)[26..40]
-    section_five = Array(answer_hash)[0..4]
-    section_six = Array(answer_hash)[0..4]
-    section_seven = Array(answer_hash)[0..4]
+    section_five = Array(answer_hash)[41..44]
+    section_six = Array(answer_hash)[45..50]
+    section_seven = Array(answer_hash)[51..54]
 
     @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash, section_one: section_one, section_two: section_two, section_three: section_three, section_four: section_four, section_five: section_five, section_six: section_six, section_seven: section_seven)
     @response.save
