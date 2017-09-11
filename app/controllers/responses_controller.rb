@@ -28,6 +28,8 @@ class ResponsesController < ApplicationController
       @onesWeight.push(Answer.find(i[0]).answer_weight)
     end
 
+    @average = @onesWeight.inject{ |sum, el| sum + el }.to_f / @onesWeight.size
+
   end
 
   # GET /responses/new
