@@ -107,12 +107,13 @@ $(document).ready(function(){
 
 <div class="container">
   <%= form_for @response, url: respondent_responses_path, html: { multipart: true } do |f| %>
+
     <% if @response.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+        <h2> An error prohibited this response from being saved:</h2>
 
         <ul>
-        <% @response.errors.full_messages.each do |message| %>
+        <% @response.errors.each do |name, message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
@@ -169,8 +170,13 @@ $(document).ready(function(){
 
           <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
             <% question.answers.each do |answer| %>
-            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+            <% if answer.answer_weight == 1 %>
+              <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+              <% else %>
+              <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+              <% end %>
             <% end %>
+
           </div>
         </div>
       <hr>
@@ -193,7 +199,11 @@ $(document).ready(function(){
 
       <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
         <% question.answers.each do |answer| %>
-        <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+        <% if answer.answer_weight == 1 %>
+        <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+          <% else %>
+          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -217,7 +227,11 @@ $(document).ready(function(){
 
         <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <% question.answers.each do |answer| %>
+          <% if answer.answer_weight == 1 %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+          <% else %>
           <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
           <% end %>
         </div>
       </div>
@@ -242,7 +256,11 @@ $(document).ready(function(){
 
         <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <% question.answers.each do |answer| %>
-          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% if answer.answer_weight == 5 %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+          <% else %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -267,7 +285,11 @@ $(document).ready(function(){
 
         <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <% question.answers.each do |answer| %>
-          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% if answer.answer_weight == 1 %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+          <% else %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -292,7 +314,11 @@ $(document).ready(function(){
 
         <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <% question.answers.each do |answer| %>
-          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% if answer.answer_weight == 1 %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+          <% else %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
           <% end %>
         </div>
       </div>
@@ -317,7 +343,11 @@ $(document).ready(function(){
 
         <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <% question.answers.each do |answer| %>
-          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% if answer.answer_weight == 1 %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight],:checked => true ) %><%= answer.answer_text %> <br>
+          <% else %>
+            <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
           <% end %>
         </div>
       </div>
