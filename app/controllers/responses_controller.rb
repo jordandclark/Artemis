@@ -30,6 +30,13 @@ class ResponsesController < ApplicationController
 
     @average = @onesWeight.inject{ |sum, el| sum + el }.to_f / @onesWeight.size
 
+    @section_one = @response.section_one
+    total_one = 0
+      @section_one.each do |i|
+      total_one += i[1].to_i
+      end
+    @section_one_total = total_one/5
+
   end
 
   # GET /responses/new
@@ -52,7 +59,7 @@ class ResponsesController < ApplicationController
 
     i = 1
     answer_hash = Hash.new
-    41.times do
+    55.times do
       answer_hash[i.to_s] = params["question_id " + i.to_s]
       i += 1
     end

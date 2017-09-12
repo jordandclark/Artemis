@@ -1,47 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<%= @ones[0] %> first index
+<%= @section_one_total %>
+
+<%= @response.section_one %>
 
 <br>
 
-<%= @onesWeight[0] %> first score
+<% string = @ones.join("~ ")
+   lines = string.split("~ ")
+   lines.each do |line| %>
+  <li><%= line %></li>
+<% end %>
 
-<br>
+<% string = @onesWeight.join("~ ")
+   lines = string.split("~ ")
+   lines.each do |line| %>
+  <li><%= line %></li>
+<% end %>
 
-<%= @ones[1] %> second index
+<% @ones.each do |one| %>
+    <div class="post_wrapper">
+        <h1 class="title">
+          <%= one %>
+        </h1>
 
-<br>
-
-<%= @onesWeight[1] %> second score
-
-<br>
-
-<%= @ones[2] %> third index
-
-<br>
-
-<%= @onesWeight[2] %> third score
-
-<br>
-
-<%= @ones[3] %> fourth index
-
-<br>
-
-<%= @onesWeight[3] %> fourth score
-
-<br>
-
-<%= @ones[4] %> fifth index
-
-<br>
-
-<%= @onesWeight[4] %> fifth score
-
-<br>
-
-<%= @onesWeight %> all scores
-
-<br>
-
-<%= @average %> average scores
+        <p class="body">
+          <%= @onesWeight %>
+        </p>
+    </div>
+<%end%>
