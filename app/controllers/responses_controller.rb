@@ -223,8 +223,6 @@ class ResponsesController < ApplicationController
 
     @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash, section_one: section_one, section_two: section_two, section_three: section_three, section_four: section_four, section_five: section_five, section_six: section_six, section_seven: section_seven)
 
-
-    binding.pry
     @response.save
 
 

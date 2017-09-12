@@ -160,13 +160,18 @@
         <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
         <% end %>
         <br>
-        <h4> Here are all the questions you scored low on: </h4>
-      <% @section_one_question_ones.each do |q| %>
-          <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-      <% end %>
+      <% if @section_one_question_ones.empty? && @section_one_question_twos.empty? %>
 
-      <% @section_one_question_twos.each do |q| %>
-          <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+      <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_one_question_ones.each do |q| %>
+            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+        <% end %>
+
+        <% @section_one_question_twos.each do |q| %>
+            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -194,13 +199,19 @@
         <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
         <% end %>
         <br>
-        <h4> Here are all the questions you scored low on: </h4>
-      <% @section_two_question_ones.each do |q| %>
-          <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-      <% end %>
 
-      <% @section_two_question_twos.each do |q| %>
-          <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% if @section_two_question_ones.empty? && @section_two_question_twos.empty? %>
+
+        <% else %>
+            <h4> Here are all the questions you scored low on: </h4>
+          <% @section_two_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_two_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+
       <% end %>
       </div>
 
@@ -226,13 +237,18 @@
         <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
         <% end %>
         <br>
-      <h4> Here are all the questions you scored low on: </h4>
-      <% @section_three_question_ones.each do |q| %>
-          <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-      <% end %>
 
-      <% @section_three_question_twos.each do |q| %>
-          <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+      <% if @section_three_question_ones.empty? && @section_three_question_twos.empty? %>
+        <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_three_question_ones.each do |q| %>
+            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+        <% end %>
+
+        <% @section_three_question_twos.each do |q| %>
+            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% end %>
+
       <% end %>
     </div>
 <!-- Section 4 -->
@@ -258,13 +274,18 @@
         <% end %>
         <br>
 
-      <h4> Here are all the questions you scored low on: </h4>
-      <% @section_three_question_ones.each do |q| %>
-          <%= q %> <p>You answered: Strongly Disagree </p>
-      <% end %>
+      <% if @section_four_question_ones.empty? && @section_four_question_twos.empty?  %>
 
-      <% @section_three_question_twos.each do |q| %>
-          <%= q %> <p>You answered: Disagree</p>
+      <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_four_question_ones.each do |q| %>
+            <%= q %> <p>You answered: Strongly Disagree </p>
+        <% end %>
+
+        <% @section_four_question_twos.each do |q| %>
+            <%= q %> <p>You answered: Disagree</p>
+        <% end %>
+
       <% end %>
     </div>
 
@@ -290,14 +311,17 @@
           <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
           <% end %>
           <br>
+        <% if @section_five_question_ones.empty? && @section_five_question_twos.empty? %>
 
-        <h4> Here are all the questions you scored low on: </h4>
-        <% @section_five_question_ones.each do |q| %>
-            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-        <% end %>
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_five_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
 
-        <% @section_five_question_twos.each do |q| %>
-            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% @section_five_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
         <% end %>
       </div>
 
@@ -325,13 +349,18 @@
           <% end %>
           <br>
 
-        <h4> Here are all the questions you scored low on: </h4>
-        <% @section_six_question_ones.each do |q| %>
-            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-        <% end %>
+        <% if @section_six_question_ones.empty? && @section_six_question_twos.empty?  %>
 
-        <% @section_six_question_twos.each do |q| %>
-            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_six_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_six_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+
         <% end %>
       </div>
 
@@ -358,13 +387,17 @@
           <% end %>
           <br>
 
-        <h4> Here are all the questions you scored low on: </h4>
-        <% @section_seven_question_ones.each do |q| %>
-            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-        <% end %>
+        <% if @section_seven_question_ones.empty? && @section_seven_question_twos.empty? %>
 
-        <% @section_seven_question_twos.each do |q| %>
-            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_seven_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_seven_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
         <% end %>
       </div>
 
