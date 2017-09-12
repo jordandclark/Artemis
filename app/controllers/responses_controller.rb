@@ -181,6 +181,13 @@ class ResponsesController < ApplicationController
 
     @average = @onesWeight.inject{ |sum, el| sum + el }.to_f / @onesWeight.size
 
+    @section_one = @response.section_one
+    total_one = 0
+      @section_one.each do |i|
+      total_one += i[1].to_i
+      end
+    @section_one_total = total_one/5
+
   end
 
   # GET /responses/new
